@@ -54,7 +54,7 @@ graph TD
 | **Identify Gaps** | Gap analysis between current & target state | LangChain + custom logic |
 | **Recommend Branches** | Parallel recommendation generation | OpenAI o3, Claude Sonnet 4, Gemini 2.5 Pro |
 | **Evaluation Branches** | Self-evaluation with iterative improvement | Provider-specific models |
-| **Consensus** | Multi-model synthesis | OpenAI o3 with advanced prompting |
+| **Consensus** | Multi-model synthesis | Gemini 2.5 Pro with advanced prompting |
 
 ## 🚀 Quick Start
 
@@ -207,7 +207,7 @@ The system implements LangGraph's fan-out/fan-in pattern:
 1. **Fan-out**: Three parallel branches process independently
 2. **Evaluation Loops**: Each branch self-evaluates (max 3 iterations)
 3. **Fan-in**: Consensus node waits for all branches to complete
-4. **Synthesis**: OpenAI o3 combines best elements from all branches
+4. **Synthesis**: Gemini 2.5 Pro combines best elements from all branches
 
 ### Quality Assurance
 

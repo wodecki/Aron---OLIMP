@@ -3,7 +3,7 @@ import json
 import re
 from pathlib import Path
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
 from state import DocumentState
 
@@ -73,27 +73,17 @@ def consensus(state: DocumentState) -> DocumentState:
             return state
     
     try:
-        # Initialize OpenAI for consensus (using the most advanced reasoning model)
-        consensus_model = os.getenv("OPENAI_MODEL", "o3-2025-04-16")
+        # Initialize Gemini for consensus
+        consensus_model = os.getenv("GEMINI_MODEL", "gemini-2.5-pro-preview-05-06")
         
-        # o3 models don't support custom temperature
-        if "o3" in consensus_model:
-            consensus_llm = ChatOpenAI(
-                model=consensus_model,
-                max_tokens=None,
-                timeout=None,
-                max_retries=2,
-                openai_api_key=os.getenv("OPENAI_API_KEY")
-            )
-        else:
-            consensus_llm = ChatOpenAI(
-                model=consensus_model,
-                temperature=0.1,  # Low temperature for consistent synthesis
-                max_tokens=None,
-                timeout=None,
-                max_retries=2,
-                openai_api_key=os.getenv("OPENAI_API_KEY")
-            )
+        consensus_llm = ChatGoogleGenerativeAI(
+            model=consensus_model,
+            temperature=0.1,  # Low temperature for consistent synthesis
+            max_tokens=None,
+            timeout=None,
+            max_retries=2,
+            google_api_key=os.getenv("GOOGLE_API_KEY")
+        )
         
         print(f"Initialized consensus model: {consensus_model}")
         
@@ -150,20 +140,20 @@ REKOMENDACJE:
 ### 2. WYMAGANIA KONSTRUKCYJNE RAPORTU
 
 **DŁUGOŚĆ I GŁĘBOKOŚĆ:**
-- Docelowo 400-500 linii (znacznie więcej niż dotychczasowe raporty)
+- Docelowo 3500-4000 słów
 - Każda sekcja powinna być rozwijana narracyjnie, nie tylko punktowo
 - Dodaj kontekst biznesowy, uzasadnienia i przykłady praktyczne
 - Włącz szczegółowe scenariusze implementacyjne
 
 **STRUKTURA NARRACYJNA:**
-1. **Streszczenie wykonawcze** (80-100 linii)
+1. **Streszczenie wykonawcze**
    - Pełny kontekst strategiczny organizacji
    - Szczegółowa diagnoza obecnego stanu z uzasadnieniami
    - Kluczowe wyzwania z praktycznymi przykładami
    - Wizja docelowa z konkretnymi korzyściami biznesowymi
    - Roadmapa transformacji z kluczowymi milestone'ami
 
-2. **Analiza według obszarów OLIMP** (200-250 linii)
+2. **Analiza według obszarów OLIMP**
    - **Technologia i Infrastruktura**: 
      * Szczegółowa ocena każdego komponentu technologicznego
      * Konkretne rekomendacje techniczne z dostawcami i kosztami
@@ -180,21 +170,21 @@ REKOMENDACJE:
      * Governance i compliance (GDPR, AI Act) z konkretnymi procedurami
      * Change management i komunikacja wewnętrzna
 
-3. **Plan implementacji** (80-100 linii)
+3. **Plan implementacji**
    - Szczegółowy harmonogram 3-fazowy z milestone'ami
    - Konkretnymi datami, budżetami i odpowiedzialnościami
    - Analiza zależności między projektami
    - Strategie zarządzania ryzykiem i planowanie awaryjne
    - Quick wins i długoterminowe inwestycje strategiczne
 
-4. **Zasoby, budżet i governance** (50-70 linii)
+4. **Zasoby, budżet i governance** 
    - Szczegółowy breakdown kosztów z uzasadnieniami
    - Strategie finansowania i ROI analysis
    - Organizacja zespołu transformacyjnego
    - KPI i system monitoringu postępów
    - Procedury raportowania i review
 
-5. **Korzyści biznesowe i transformacja kulturowa** (40-60 linii)
+5. **Korzyści biznesowe i transformacja kulturowa** 
    - Konkretne przypadki użycia (use cases) z szacunkami ROI
    - Przewaga konkurencyjna i positioning rynkowy
    - Wpływ na satysfakcję pracowników i employer branding

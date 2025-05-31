@@ -11,10 +11,17 @@ def main():
     """
     print("Starting document processing process...")
     
-    # Initialize empty state
+    # Initialize empty state with new structure
     initial_state = {
         "document_content": "",
-        "answers": {}
+        "answers": {},
+        "gaps": {},
+        "branch_data": {},
+        "consensus_recommendation": None,
+        "recommendations": None,
+        "evaluation_feedback": None,
+        "evaluation_iterations": 0,
+        "recommendation_approved": False
     }
     
     # Invoke the app with the initial state

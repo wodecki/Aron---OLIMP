@@ -14,6 +14,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langgraph.graph import END, StateGraph
 from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode
+from langgraph.types import Command
 
 
 def create_agent(llm, tools, system_message: str):
@@ -40,9 +41,10 @@ load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["TAVILY_API_KEY"] = os.getenv("TAVILY_API_KEY")
 
-tavily = TavilySearchResults(max_results=5)
+# Initialize tools
 wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
 arxiv = load_tools(["arxiv"])[0]
+tavily = TavilySearchResults(max_results=5)
 
 llm = ChatOpenAI(
     model="gpt-4o-mini",
@@ -84,13 +86,22 @@ editor_agent = create_agent(
     system_message=editor_template,
 )
 
-# Node definitions - each agent defined separately
-def search_node(state):
+# Node definitions - each agent defined separately using Command for routing
+def search_node(state) -> Command[Literal["tools", "outliner"]]:
     """Search agent node for finding information."""
     result = search_agent.invoke(state)
-    return {
-        "messages": [result]
-    }
+    
+    # Check if the result has tool calls to determine routing
+    if result.tool_calls:
+        return Command(
+            update={"messages": [result]},
+            goto="tools"
+        )
+    else:
+        return Command(
+            update={"messages": [result]},
+            goto="outliner"
+        )
 
 def outliner_node(state):
     """Outliner agent node for creating document structure."""
@@ -106,41 +117,37 @@ def writer_node(state):
         "messages": [result]
     }
 
-def editor_node(state):
+def editor_node(state) -> Command[Literal["writer", END]]:
     """Editor agent node for content review and iteration tracking."""
     result = editor_agent.invoke(state)
-    iteration_count = state["no_of_iterations"] + 1
-    return {
-        "messages": [result],
-        "no_of_iterations": iteration_count
-    }
+    iteration_count = state.get("no_of_iterations", 0) + 1
+    
+    # Check completion criteria to determine routing
+    # Look for DONE in the content (case insensitive) or if max iterations reached
+    content_lower = result.content.lower() if result.content else ""
+    if 'done' in content_lower or iteration_count >= 3:
+        return Command(
+            update={
+                "messages": [result],
+                "no_of_iterations": iteration_count
+            },
+            goto=END
+        )
+    else:
+        return Command(
+            update={
+                "messages": [result],
+                "no_of_iterations": iteration_count
+            },
+            goto="writer"
+        )
 
-# Create tool node for LangGraph
-tool_node = ToolNode([tavily, wikipedia, arxiv])
+
 
 # Define state structure
 class AgentState(TypedDict):
     messages: Annotated[list, add_messages]
     no_of_iterations: int
-
-# Define routing functions
-def should_search(state) -> Literal["tools", "outliner"]:
-    """Route from search node to tools or outliner based on tool calls."""
-    messages = state['messages']
-    last_message = messages[-1]
-    if last_message.tool_calls:
-        return "tools"
-    return "outliner"
-
-def should_edit(state) -> Literal["writer", END]:
-    """Route from editor node to writer or end based on completion criteria."""
-    messages = state['messages']
-    print("Iteration number from should_edit:", state['no_of_iterations'])
-    last_message = messages[-1]
-    
-    if 'DONE' in last_message.content or state['no_of_iterations'] >= MAX_ITERATIONS:
-        return END
-    return "writer"
 
 # Configuration
 MAX_ITERATIONS = 3
@@ -150,7 +157,7 @@ workflow = StateGraph(AgentState)
 
 # Add nodes to the graph
 workflow.add_node("search", search_node)
-workflow.add_node("tools", tool_node)
+workflow.add_node("tools", ToolNode(tools))
 workflow.add_node("outliner", outliner_node)
 workflow.add_node("writer", writer_node)
 workflow.add_node("editor", editor_node)
@@ -158,22 +165,20 @@ workflow.add_node("editor", editor_node)
 # Set entry point
 workflow.set_entry_point("search")
 
-# Add edges between nodes
-workflow.add_conditional_edges("search", should_search)
-workflow.add_edge("tools", "search")
+# Add edges between nodes - simplified since routing is handled by Commands
+workflow.add_edge("tools", "outliner")  # After tools, go directly to outliner to prevent loops
 workflow.add_edge("outliner", "writer")
 workflow.add_edge("writer", "editor")
-workflow.add_conditional_edges("editor", should_edit)
 
 # Compile the graph
 graph = workflow.compile()
 
-# Execution
-if __name__ == "__main__":
-    thread = {"configurable": {"thread_id": "1"}}
+#Execution
+# if __name__ == "__main__":
+#     thread = {"configurable": {"thread_id": "1"}}
     
-    question = "Jaki jest potencjał wykorzystania technologii generatywnych w bankowości? Zaproponuj scenariusze użycia i przykładowe uzasadnienia biznesowe."
-    input_message = HumanMessage(content=question)
+#     question = "Jaki jest potencjał wykorzystania technologii generatywnych w bankowości? Zaproponuj scenariusze użycia i przykładowe uzasadnienia biznesowe."
+#     input_message = HumanMessage(content=question)
     
-    for event in graph.stream({"messages": [input_message], "no_of_iterations": 0}, thread, stream_mode="values"):
-        event["messages"][-1].pretty_print()
+#     for event in graph.stream({"messages": [input_message], "no_of_iterations": 0}, thread, stream_mode="values"):
+#         event["messages"][-1].pretty_print()

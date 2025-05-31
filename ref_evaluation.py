@@ -1,0 +1,171 @@
+import os
+import tomllib  # For Python 3.11+, use tomli for earlier versions
+
+from langchain_openai import ChatOpenAI
+from langgraph.prebuilt import create_react_agent
+from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_community.agent_toolkits.load_tools import load_tools
+from langchain_community.tools import WikipediaQueryRun
+from langchain_community.utilities import WikipediaAPIWrapper
+
+from langchain_core.tools import tool
+
+from langgraph_supervisor import create_supervisor
+
+from typing import Annotated, Literal, TypedDict
+from langgraph.graph.message import add_messages
+
+# Load environment variables
+from dotenv import load_dotenv
+load_dotenv()
+
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+os.environ["TAVILY_API_KEY"] = os.getenv("TAVILY_API_KEY")
+os.environ["OPENWEATHERMAP_API_KEY"] = os.getenv("OPENWEATHERMAP_API_KEY")
+
+tavily = TavilySearchResults(max_results=5)
+weather = load_tools(["openweathermap-api"])[0]
+wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
+arxiv = load_tools(["arxiv"])[0]
+
+llm = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0,
+)
+
+# Load prompt templates from TOML file
+with open("config/prompts.toml", "rb") as f:
+    prompts = tomllib.load(f)
+
+search_template = prompts["search"]["template"]
+outliner_template = prompts["outliner"]["template"]
+writer_template = prompts["writer"]["template"]
+editor_template = prompts["editor"]["template"]
+
+search_agent = create_react_agent(
+    llm,
+    tools=[tavily],
+    name="internet_search_expert",
+    prompt=search_template,
+)
+
+outliner_agent = create_react_agent(
+    llm,
+    tools=[],
+    name="outliner_expert",
+    prompt=outliner_template,
+)
+
+writer_agent = create_react_agent(
+    llm,
+    tools=[],
+    name="writer_expert",
+    prompt=writer_template,
+)
+editor_agent = create_react_agent(
+    llm,
+    tools=[],
+    name="editor_expert",
+    prompt=editor_template,
+)
+
+# Helper function to create a node for a given agent
+def agent_node(state, agent, name):
+    result = agent.invoke(state)
+    return {
+        "messages": [result]
+    }
+    
+import functools
+
+search_node = functools.partial(agent_node, agent=search_agent, name="Search Agent")
+outliner_node = functools.partial(agent_node, agent=outliner_agent, name="Outliner Agent")
+writer_node = functools.partial(agent_node, agent=writer_agent, name="Writer Agent")
+
+def editor_node(state):
+  result = editor_agent.invoke(state)
+  N = state["no_of_iterations"] + 1
+  return {
+      "messages": [result],
+      "no_of_iterations": N
+  }
+  
+from langgraph.prebuilt import ToolNode
+
+# LangGraph allows for us to create tool nodes
+tools = [tavily, weather, wikipedia, arxiv]
+tool_node = ToolNode(tools)
+
+from langchain_core.messages import (
+    BaseMessage,
+    HumanMessage,
+    ToolMessage,
+    AIMessage
+)
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+
+from langgraph.graph import END, StateGraph
+class AgentState(TypedDict):
+  messages: Annotated[list, add_messages]
+  no_of_iterations: int
+
+def should_search(state) -> Literal["tools", "outliner"]:
+    messages = state['messages']
+    last_message = messages[-1]
+    # If the LLM makes a tool call, then we route to the "tools" node
+    if last_message.tool_calls:
+        return "tools"
+    # Otherwise, we stop (reply to the user)
+    return "outliner"
+
+def should_edit(state) -> Literal["writer", END]:
+  messages = state['messages']
+  print("Iteration number from should_edit: ", state['no_of_iterations'])
+  last_message = messages[-1]
+
+  if 'DONE' in last_message.content or state['no_of_iterations']>=MAX_ITERATIONS:
+    return END
+
+  return "writer"
+
+# Instantiate a new graph
+workflow = StateGraph(AgentState)
+
+# Add the nodes
+workflow.add_node("search", search_node)
+workflow.add_node("tools", tool_node)
+workflow.add_node("outliner", outliner_node)
+workflow.add_node("writer", writer_node)
+workflow.add_node("editor", editor_node)
+
+# Set the entrypoint as `search`
+# This means that this node is the first one called
+workflow.set_entry_point("search")
+# Add the edges
+workflow.add_conditional_edges(
+    "search",
+    should_search,
+)
+workflow.add_edge("tools", 'search')
+workflow.add_edge("outliner", "writer")
+workflow.add_edge("writer", "editor")
+workflow.add_conditional_edges(
+    "editor",
+    should_edit
+)
+
+
+graph = workflow.compile()
+
+from langchain_core.messages import HumanMessage
+
+
+thread = {"configurable": {"thread_id": "1"}}
+
+MAX_ITERATIONS = 3
+
+question = "Jaki jest potencjał wykorzystania technologii generatywnych w bankowości? Zaproponuj scenariusze użycia i przykładowe uzasadnienia biznesowe."
+input_message = HumanMessage(content=question)
+
+for event in graph.stream({"messages": [input_message], "no_of_iterations":0}, thread, stream_mode="values"):
+     event["messages"][-1].pretty_print()

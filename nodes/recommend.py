@@ -13,12 +13,15 @@ from state import DocumentState
 load_dotenv()
 
 
-def create_llm(provider: str, model_name: str, config: dict):
+def create_llm(provider: str, model_name: str, config: dict, provider_config: dict):
     """Factory function to create LLM based on provider"""
+    # Get provider-specific temperature setting
+    temperature = provider_config.get("temperature", 0.1)
+    
     if provider == "gemini":
         return ChatGoogleGenerativeAI(
             model=model_name,
-            temperature=config.get("temperature", 0),
+            temperature=temperature,
             max_tokens=config.get("max_tokens", None),
             timeout=config.get("timeout", None),
             max_retries=config.get("max_retries", 2),
@@ -27,7 +30,7 @@ def create_llm(provider: str, model_name: str, config: dict):
     elif provider == "openai":
         return ChatOpenAI(
             model=model_name,
-            temperature=config.get("temperature", 0),
+            temperature=temperature,
             max_tokens=config.get("max_tokens", None),
             timeout=config.get("timeout", None),
             max_retries=config.get("max_retries", 2),
@@ -37,7 +40,7 @@ def create_llm(provider: str, model_name: str, config: dict):
         # Anthropic requires max_tokens to be an integer, not None
         anthropic_kwargs = {
             "model": model_name,
-            "temperature": config.get("temperature", 0),
+            "temperature": temperature,
             "max_retries": config.get("max_retries", 2),
             "anthropic_api_key": os.getenv("ANTHROPIC_API_KEY")
         }
@@ -89,8 +92,11 @@ def recommend(state: DocumentState) -> DocumentState:
             print(f"Error: Model name not found in environment variable {model_env_key}")
             return state
         
+        # Get provider-specific configuration
+        provider_config = rec_config["providers"][provider]
+        
         # Initialize LLM based on provider
-        llm = create_llm(provider, model_name, model_config)
+        llm = create_llm(provider, model_name, model_config, provider_config)
         
         print(f"Initialized LangChain {provider} model: {model_name}")
         
@@ -157,6 +163,15 @@ def recommend(state: DocumentState) -> DocumentState:
         if recommendation_report.endswith('```'):
             recommendation_report = recommendation_report[:-3]
         recommendation_report = recommendation_report.strip()
+        
+        # Save recommendations to state for evaluation workflow
+        state["recommendations"] = recommendation_report
+        
+        # Initialize evaluation fields if not present
+        if "evaluation_iterations" not in state:
+            state["evaluation_iterations"] = 0
+        if "recommendation_approved" not in state:
+            state["recommendation_approved"] = False
         
         # Determine output filename based on main file
         output_filename = "A_recommendations.md"  # Default

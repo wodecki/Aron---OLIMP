@@ -1,0 +1,11 @@
+Document Summary
+================
+
+Original Document Length: 327 characters
+
+Summary:
+The document outlines a self-assessment questionnaire for organizations, designed for the OLIMP model. It consists of 64 questions divided into 8 areas, with each question accompanied by a space for respondents to indicate the answer that best reflects their situation.
+
+Full Document Content:
+Kwestionariusz dla modelu OLIMP
+Kwestionariusz został przygotowany w taki sposób, że można za jego pomocą dokonać samooceny organizacji. Kwestionariusz zawiera 64 pytania podzielone na 8 obszarów. Pod każdą z odpowiedzią jest puste pole do zaznaczenia tej odpowiedzi, która jest najbliższa prawdy, jeśli chodzi o dane pytanie.

@@ -53,6 +53,8 @@ FINAL CHECK: Before completing the extraction, systematically verify each select
 [recommend]
 recommendation_prompt = """Jesteś ekspertem ds. transformacji cyfrowej i implementacji AI w organizacjach. 
 
+UWAGA: Wykorzystaj najnowsze, aktualne informacje o technologiach AI i najlepszych praktykach. 
+
 Na podstawie analizy luk w obszarach OLIMP, przygotuj szczegółowy raport z rekomendacjami dla firmy, która chce płynnie przejść z obecnego stanu do poziomu E (maksymalnego) poprzez stany przejściowe.
 
 Dane wejściowe to analiza luk w formacie JSON, która zawiera:

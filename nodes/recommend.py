@@ -2,8 +2,13 @@ import os
 import json
 import tomllib
 from pathlib import Path
-import google.generativeai as genai
+from dotenv import load_dotenv
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.messages import HumanMessage
 from state import DocumentState
+
+# Load environment variables
+load_dotenv()
 
 
 def recommend(state: DocumentState) -> DocumentState:
@@ -24,9 +29,18 @@ def recommend(state: DocumentState) -> DocumentState:
         return state
     
     try:
-        # Configure Gemini API
-        genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-        model = genai.GenerativeModel(os.getenv("GEMINI_MODEL", "gemini-2.5-pro-preview-05-06"))
+        # Initialize LangChain Gemini model
+        model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-pro-preview-05-06")
+        llm = ChatGoogleGenerativeAI(
+            model=model_name,
+            temperature=0,
+            max_tokens=None,
+            timeout=None,
+            max_retries=2,
+            google_api_key=os.getenv("GOOGLE_API_KEY")
+        )
+        
+        print(f"Initialized LangChain Gemini model: {model_name}")
         
         # Load recommendation prompt from config
         try:
@@ -70,17 +84,20 @@ def recommend(state: DocumentState) -> DocumentState:
                 supplementary_context="Brak dodatkowych danych z kwestionariusza."
             )
         
-        print("Generating recommendations with Gemini...")
+        print("Generating recommendations with LangChain Gemini...")
         
-        # Generate recommendations using Gemini
-        response = model.generate_content(formatted_prompt)
+        # Create message for LangChain
+        message = HumanMessage(content=formatted_prompt)
         
-        if not response.text:
-            print("Error: No response from Gemini")
+        # Generate recommendations using LangChain Gemini
+        response = llm.invoke([message])
+        
+        if not response.content:
+            print("Error: No response from LangChain Gemini")
             return state
             
         # Clean the response - remove markdown code block markers if present
-        recommendation_report = response.text.strip()
+        recommendation_report = response.content.strip()
         if recommendation_report.startswith('```markdown'):
             recommendation_report = recommendation_report[11:]
         if recommendation_report.startswith('```'):

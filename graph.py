@@ -1,9 +1,12 @@
 import os
+from typing import Literal
 from dotenv import load_dotenv
 from langgraph.graph import START, END, StateGraph
 from state import DocumentState
 from nodes.extract_answers import extract_answers
 from nodes.identify_gaps import identify_gaps
+from nodes.recommend import recommend
+from nodes.evaluation import evaluation
 
 # Load environment variables if needed
 try:
@@ -11,11 +14,43 @@ try:
 except ImportError:
     print("dotenv not installed, skipping environment variable loading")
 
+def should_continue_evaluation(state: DocumentState) -> Literal["recommend", END]:
+    """
+    Conditional edge function to determine if evaluation should continue or end.
+    Implements 3-iteration limit with final report delivery.
+    
+    Returns:
+        "recommend" if recommendations need revision (iterations 1-2)
+        END if recommendations are approved OR iteration 3 reached (final report)
+    """
+    max_iterations = 3
+    current_iterations = state.get("evaluation_iterations", 0)
+    approved = state.get("recommendation_approved", False)
+    
+    # Always end after iteration 3 (final report delivery)
+    if current_iterations >= max_iterations:
+        print(f"📋 Iteration {max_iterations} completed - delivering final report to user")
+        return END
+    
+    # End if approved before max iterations
+    if approved:
+        print("✅ Recommendations approved - ending evaluation loop")
+        return END
+    
+    # Continue for revision (iterations 1-2 only)
+    print(f"🔄 Revision needed - returning to recommend node (iteration {current_iterations + 1})")
+    return "recommend"
+
 def create_graph():
     """
-    Create a document processing graph with two nodes:
+    Create a document processing graph with evaluation loop:
     1. extract_answers - Read PDF files and extract questionnaire data using Gemini
     2. identify_gaps - Analyze gaps between current OLIMP answers and maximum level E
+    3. recommend - Generate recommendations for smooth transition to level E using configurable LLM
+    4. evaluation - Evaluate recommendations using OpenAI o3 and provide feedback
+    
+    The graph includes an evaluation loop between recommend and evaluation nodes,
+    similar to the writer-editor pattern in ref_evaluation.py
     
     Returns:
         Compiled graph
@@ -26,14 +61,27 @@ def create_graph():
     # Add nodes
     graph_builder.add_node("extract_answers", extract_answers)
     graph_builder.add_node("identify_gaps", identify_gaps)
+    graph_builder.add_node("recommend", recommend)
+    graph_builder.add_node("evaluation", evaluation)
     
-    # Add edges for sequential flow
+    # Add edges for sequential flow with evaluation loop
     graph_builder.add_edge(START, "extract_answers")
     graph_builder.add_edge("extract_answers", "identify_gaps")
-    graph_builder.add_edge("identify_gaps", END)
+    graph_builder.add_edge("identify_gaps", "recommend")
+    graph_builder.add_edge("recommend", "evaluation")
+    
+    # Conditional edge for evaluation loop
+    graph_builder.add_conditional_edges(
+        "evaluation",
+        should_continue_evaluation,
+        {
+            "recommend": "recommend",  # Go back to recommend for revision
+            END: END  # End if approved or max iterations reached
+        }
+    )
     
     # Compile the graph
     return graph_builder.compile()
 
-# Create the graph
+# Create the graph with evaluation loop
 app = create_graph()

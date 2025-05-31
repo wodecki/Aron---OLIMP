@@ -81,7 +81,7 @@
             "D": "Przetwarzanie danych w czasie rzeczywistym, z niewielkimi opóźnieniami",
             "E": "W pełni zoptymalizowane przetwarzanie danych w czasie rzeczywistym dla wszystkich zadań Al"
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         },
         {
           "question_text": "Czy Twoja organizacja posiada moc obliczeniową niezbędną do wdrażania i utrzymania modeli Al?",
@@ -92,7 +92,7 @@
             "D": "Wysoka moc obliczeniowa, wystarczająca dla większości aplikacji Al",
             "E": "Zaawansowana moc obliczeniowa zoptymalizowana pod potrzeby Al"
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "Czy w codziennej pracy wykorzystywane są wewnętrzne lub zewnętrzne narzędzia Al (np. ChatGPT, MS Copilot)?",

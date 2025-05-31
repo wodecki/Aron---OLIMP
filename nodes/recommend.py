@@ -4,6 +4,8 @@ import tomllib
 from pathlib import Path
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage
 from state import DocumentState
 
@@ -11,9 +13,46 @@ from state import DocumentState
 load_dotenv()
 
 
+def create_llm(provider: str, model_name: str, config: dict):
+    """Factory function to create LLM based on provider"""
+    if provider == "gemini":
+        return ChatGoogleGenerativeAI(
+            model=model_name,
+            temperature=config.get("temperature", 0),
+            max_tokens=config.get("max_tokens", None),
+            timeout=config.get("timeout", None),
+            max_retries=config.get("max_retries", 2),
+            google_api_key=os.getenv("GOOGLE_API_KEY")
+        )
+    elif provider == "openai":
+        return ChatOpenAI(
+            model=model_name,
+            temperature=config.get("temperature", 0),
+            max_tokens=config.get("max_tokens", None),
+            timeout=config.get("timeout", None),
+            max_retries=config.get("max_retries", 2),
+            openai_api_key=os.getenv("OPENAI_API_KEY")
+        )
+    elif provider == "anthropic":
+        # Anthropic requires max_tokens to be an integer, not None
+        anthropic_kwargs = {
+            "model": model_name,
+            "temperature": config.get("temperature", 0),
+            "max_retries": config.get("max_retries", 2),
+            "anthropic_api_key": os.getenv("ANTHROPIC_API_KEY")
+        }
+        if config.get("max_tokens") is not None:
+            anthropic_kwargs["max_tokens"] = config.get("max_tokens")
+        if config.get("timeout") is not None:
+            anthropic_kwargs["timeout"] = config.get("timeout")
+        return ChatAnthropic(**anthropic_kwargs)
+    else:
+        raise ValueError(f"Unsupported provider: {provider}")
+
+
 def recommend(state: DocumentState) -> DocumentState:
     """
-    Node to generate recommendations based on gaps analysis using Gemini
+    Node to generate recommendations based on gaps analysis using configurable LLM
     
     Args:
         state: The current state containing gaps analysis
@@ -29,18 +68,31 @@ def recommend(state: DocumentState) -> DocumentState:
         return state
     
     try:
-        # Initialize LangChain Gemini model
-        model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-pro-preview-05-06")
-        llm = ChatGoogleGenerativeAI(
-            model=model_name,
-            temperature=0,
-            max_tokens=None,
-            timeout=None,
-            max_retries=2,
-            google_api_key=os.getenv("GOOGLE_API_KEY")
-        )
+        # Load model configuration
+        try:
+            with open("./config/recommendations.toml", "rb") as f:
+                rec_config = tomllib.load(f)
+        except Exception as e:
+            print(f"Error loading recommendations config: {e}")
+            return state
         
-        print(f"Initialized LangChain Gemini model: {model_name}")
+        # Get provider and model settings
+        provider = rec_config["model"]["provider"]
+        model_config = rec_config["model"]
+        
+        # Get model name from environment
+        provider_config = rec_config["providers"][provider]
+        model_env_key = provider_config["model_env_key"]
+        model_name = os.getenv(model_env_key)
+        
+        if not model_name:
+            print(f"Error: Model name not found in environment variable {model_env_key}")
+            return state
+        
+        # Initialize LLM based on provider
+        llm = create_llm(provider, model_name, model_config)
+        
+        print(f"Initialized LangChain {provider} model: {model_name}")
         
         # Load recommendation prompt from config
         try:
@@ -84,16 +136,16 @@ def recommend(state: DocumentState) -> DocumentState:
                 supplementary_context="Brak dodatkowych danych z kwestionariusza."
             )
         
-        print("Generating recommendations with LangChain Gemini...")
+        print(f"Generating recommendations with LangChain {provider}...")
         
         # Create message for LangChain
         message = HumanMessage(content=formatted_prompt)
         
-        # Generate recommendations using LangChain Gemini
+        # Generate recommendations using LangChain
         response = llm.invoke([message])
         
         if not response.content:
-            print("Error: No response from LangChain Gemini")
+            print(f"Error: No response from LangChain {provider}")
             return state
             
         # Clean the response - remove markdown code block markers if present

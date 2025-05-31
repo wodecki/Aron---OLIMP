@@ -1,0 +1,19 @@
+[model]
+# Available providers: gemini, openai, anthropic
+provider = "gemini"
+temperature = 0
+# max_tokens = null  # Comment out since TOML doesn't support null directly
+# timeout = null  # Comment out since TOML doesn't support null directly
+max_retries = 2
+
+[providers.gemini]
+model_env_key = "GEMINI_MODEL"
+api_key_env_key = "GOOGLE_API_KEY"
+
+[providers.openai]
+model_env_key = "OPENAI_MODEL"
+api_key_env_key = "OPENAI_API_KEY"
+
+[providers.anthropic]
+model_env_key = "ANTHROPIC_MODEL"
+api_key_env_key = "ANTHROPIC_API_KEY"

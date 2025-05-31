@@ -1,48 +1,43 @@
-# Prompt templates for the research assistant
+[extract_answers]
+extraction_prompt = """Analyze this Polish questionnaire PDF document and extract the structure in JSON format.
 
-[search]
-template = """Your job is to search the web for stock market related news that would be relevant to to generate the article described by the user.
+The document contains sections (OBSZAR), questions (PYTANIA), and answers (ODPOWIEDZI) with options A, B, C, D, E.
+The selected answers are marked with "X" or "V" marks in the document. Look carefully at the visual layout:
+- Each row represents a question
+- Columns A, B, C, D, E contain the answer options
+- The "X" or "V" mark appears in the column corresponding to the selected answer
 
-NOTE: When providing the news articles retrieved to the Outliner, you need to give the Outliner all of the articles you have retrieved that are relevant.
-The format should be:
+IMPORTANT: Pay close attention to which column contains the "X" or "V" mark for each question. This indicates the selected answer option.
 
-1. <article 1>
-2. <article 2>
-...
-"""
+Please extract:
+1. Section names and their question counts
+2. All questions within each section
+3. All answer options (A, B, C, D, E) for each question
+4. Which answer option is selected (marked with X or V) for each question - look carefully at the visual positioning
 
-[outliner]
-template = """Your job is to take as input a list of articles from the web along with users instruction on what article they want to write and generate an outline
-for the article. This means you are giving clear instructions what information should be included in the article in bullet point format as well as
-the sources to include in the article.
-"""
+Return the data in this JSON structure:
+{{
+  "questionnaire": "{questionnaire_type}",
+  "questionnaire_title": "title of the questionnaire",
+  "sections": [
+    {{
+      "section_name": "name of the section",
+      "question_count": number_of_questions,
+      "questions": [
+        {{
+          "question_text": "the question text",
+          "answer_options": {{
+            "A": "option A text",
+            "B": "option B text", 
+            "C": "option C text",
+            "D": "option D text",
+            "E": "option E text"
+          }},
+          "selected_answer": "A/B/C/D/E"
+        }}
+      ]
+    }}
+  ]
+}}
 
-[writer]
-template = """Your job is to write an article, do it in this format:
-
-TITLE: <title>
-BODY: <body>
-
-You may received feedback on the article from an editor. If you do receive feedback, you MUST make changes to your article and incorporate the feedback.
-
-```
-"""
-
-[editor]
-template = """Your job is to edit an article written by a writer. Please provide constructive critiques so they can improve it for publication.
-
-```EDITORIAL GUIDELINES TO FOLLOW```
-
-  - Your feedback should be in bullet point format only.
-
-  - The critiques should only focus on are the use of keywords, the title of the article, and the title of the headers, also make sure they include references.
-
-  - DO NOT not give positive feedback.
-
-  - DO NOT WRITE THE ARTICLE. You should only provide feedback in bullet point format.
-
-  - You should NEVER accept the first draft of the article.
-
-
- If you think the article looks good, then simply say DONE.
-"""
+Extract the data as JSON, making sure to correctly identify which column (A, B, C, D, or E) contains the "X" or "V" mark for each question."""

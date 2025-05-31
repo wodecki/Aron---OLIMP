@@ -174,11 +174,11 @@ workflow.add_edge("writer", "editor")
 graph = workflow.compile()
 
 #Execution
-# if __name__ == "__main__":
-#     thread = {"configurable": {"thread_id": "1"}}
+if __name__ == "__main__":
+    thread = {"configurable": {"thread_id": "1"}}
     
-#     question = "Jaki jest potencjał wykorzystania technologii generatywnych w bankowości? Zaproponuj scenariusze użycia i przykładowe uzasadnienia biznesowe."
-#     input_message = HumanMessage(content=question)
+    question = "Jaki jest potencjał wykorzystania technologii generatywnych w bankowości? Zaproponuj scenariusze użycia i przykładowe uzasadnienia biznesowe."
+    input_message = HumanMessage(content=question)
     
-#     for event in graph.stream({"messages": [input_message], "no_of_iterations": 0}, thread, stream_mode="values"):
-#         event["messages"][-1].pretty_print()
+    for event in graph.stream({"messages": [input_message], "no_of_iterations": 0}, thread, stream_mode="values"):
+        event["messages"][-1].pretty_print()

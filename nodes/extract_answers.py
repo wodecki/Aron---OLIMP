@@ -26,8 +26,34 @@ def extract_answers(state: DocumentState) -> DocumentState:
         return {
             **state,
             "document_content": "No PDF files found matching pattern A_*.pdf",
-            "summary": "No files to process"
+            "answers": {}
         }
+    
+    # Check if extraction is already done
+    expected_files = []
+    for pdf_path in pdf_files:
+        filename = Path(pdf_path).stem
+        expected_files.append(f"./data/process/{filename}.json")
+    expected_files.append("./data/process/A.json")
+    
+    all_files_exist = all(os.path.exists(file_path) for file_path in expected_files)
+    
+    if all_files_exist:
+        print("Answers already extracted to JSON...")
+        
+        # Load the integrated results
+        try:
+            with open("./data/process/A.json", "r", encoding="utf-8") as f:
+                integrated_results = json.load(f)
+            
+            return {
+                **state,
+                "document_content": f"Previously processed {len(pdf_files)} PDF files with Gemini",
+                "answers": integrated_results
+            }
+        except Exception as e:
+            print(f"Error loading existing results: {e}")
+            # Continue with extraction if loading fails
     
     try:
         # Configure Gemini API
@@ -190,30 +216,6 @@ Extract the data as JSON, making sure to correctly identify which column (A, B, 
             
             print(f"Integrated results saved to {integrated_path}")
         
-        # Create summary
-        total_questionnaires = len(all_results)
-        total_sections = 0
-        total_questions = 0
-        
-        for questionnaire_data in all_results.values():
-            if "sections" in questionnaire_data:
-                sections = questionnaire_data["sections"]
-                total_sections += len(sections)
-                for section in sections:
-                    total_questions += section.get("question_count", 0)
-        
-        summary = f"""Processing Complete:
-
-Files processed: {len(processed_files)}
-- {', '.join(processed_files)}
-
-Questionnaires extracted: {total_questionnaires}
-Total sections: {total_sections}
-Total questions: {total_questions}
-
-Individual files saved in ./data/process/
-Integrated file: ./data/process/A.json"""
-        
         document_content = f"Processed {len(pdf_files)} PDF files with Gemini {os.getenv('GEMINI_MODEL')}"
         
         print("All extractions completed successfully")
@@ -222,7 +224,7 @@ Integrated file: ./data/process/A.json"""
         return {
             **state,
             "document_content": document_content,
-            "summary": summary
+            "answers": all_results
         }
         
     except Exception as e:
@@ -230,5 +232,5 @@ Integrated file: ./data/process/A.json"""
         return {
             **state,
             "document_content": f"Error reading PDFs: {e}",
-            "summary": f"Could not extract answers due to error: {e}"
+            "answers": {}
         }

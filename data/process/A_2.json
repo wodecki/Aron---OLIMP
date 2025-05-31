@@ -1,6 +1,6 @@
 {
   "questionnaire": "OLIMP",
-  "questionnaire_title": "Kwestionariusz dla modelu OLIMP",
+  "questionnaire_title": "Kwestionariusz został przygotowany w taki sposób, że można za jego pomocą dokonać samooceny organizacji. Kwestionariusz zawiera 64 pytania podzielone na 8 obszarów. Pod każdą z odpowiedzią jest puste pole do zaznaczenia tej odpowiedzi, która jest najbliższa prawdy, jeśli chodzi o dane pytanie.",
   "sections": [
     {
       "section_name": "TECHNOLOGIA I INFRASTRUKTURA",
@@ -92,7 +92,7 @@
             "D": "Wysoka moc obliczeniowa, wystarczająca dla większości aplikacji Al",
             "E": "Zaawansowana moc obliczeniowa zoptymalizowana pod potrzeby Al"
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy w codziennej pracy wykorzystywane są wewnętrzne lub zewnętrzne narzędzia Al (np. ChatGPT, MS Copilot)?",
@@ -114,7 +114,7 @@
             "D": "Większość rozwiązań Al jest skalowalna",
             "E": "W pełni skalowalne rozwiązania Al wdrożone w całej organizacji"
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         }
       ]
     },
@@ -522,7 +522,7 @@
             "B": "Minimalne wykorzystanie Al w wybranych procesach",
             "C": "Częściowe wykorzystanie Al do automatyzacji procesów",
             "D": "Al wspiera większość procesów projektowania i wytwarzania",
-            "E": "Pełne wykorzystanie Al w automatyzacji procesów projektowania i wytwarzania produktów"
+            "E": "Pełne wykorzystanie Al w automatyzacji procesów"
           },
           "selected_answer": "B"
         },

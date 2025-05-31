@@ -13,7 +13,7 @@ except ImportError:
 def create_graph():
     """
     Create a simple document processing graph with one node:
-    1. extract_answers - Read DOCX file and summarize it using GPT-4o-mini
+    1. extract_answers - Read PDF files and extract questionnaire data using Gemini
     
     Returns:
         Compiled graph

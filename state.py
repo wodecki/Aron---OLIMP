@@ -1,6 +1,6 @@
-from typing import TypedDict
+from typing import TypedDict, Dict, Any
 
 class DocumentState(TypedDict):
     """State for document processing"""
     document_content: str
-    summary: str
+    answers: Dict[str, Any]

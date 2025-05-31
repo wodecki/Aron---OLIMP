@@ -7,13 +7,19 @@ The selected answers are marked with "X" or "V" marks in the document. Look care
 - Columns A, B, C, D, E contain the answer options
 - The "X" or "V" mark appears in the column corresponding to the selected answer
 
-IMPORTANT: Pay close attention to which column contains the "X" or "V" mark for each question. This indicates the selected answer option.
+CRITICAL: You must VERY CAREFULLY identify the exact column position of each "X" or "V" mark for every question. Take your time to:
+1. Examine each row systematically from left to right
+2. Identify which specific column (A, B, C, D, or E) contains the marking
+3. Double-check the visual alignment between the mark and the column header
+4. Be especially careful with marks that might appear between columns or slightly misaligned
+
+IMPORTANT: The accuracy of answer extraction is crucial. Pay extremely close attention to which column contains the "X" or "V" mark for each question. This indicates the selected answer option.
 
 Please extract:
 1. Section names and their question counts
 2. All questions within each section
 3. All answer options (A, B, C, D, E) for each question
-4. Which answer option is selected (marked with X or V) for each question - look carefully at the visual positioning
+4. Which answer option is selected (marked with X or V) for each question - CAREFULLY examine the exact visual positioning and alignment of each mark with its corresponding column
 
 Return the data in this JSON structure:
 {{
@@ -40,7 +46,9 @@ Return the data in this JSON structure:
   ]
 }}
 
-Extract the data as JSON, making sure to correctly identify which column (A, B, C, D, or E) contains the "X" or "V" mark for each question."""
+Extract the data as JSON, making sure to correctly identify which column (A, B, C, D, or E) contains the "X" or "V" mark for each question.
+
+FINAL CHECK: Before completing the extraction, systematically verify each selected_answer by re-examining the visual position of marks in the PDF to ensure 100% accuracy."""
 
 [recommend]
 recommendation_prompt = """Jesteś ekspertem ds. transformacji cyfrowej i implementacji AI w organizacjach. 
@@ -79,6 +87,14 @@ STRUKTURA RAPORTU:
    - Sposoby mierzenia postępu
    - Punkty kontrolne
 
+6. **Potencjalne korzyści i zyski**
+   - Korzyści biznesowe z implementacji AI w każdym z obszarów
+   - Szacowane oszczędności kosztów i wzrost efektywności
+   - Przewaga konkurencyjna i nowe możliwości biznesowe
+   - Długoterminowe korzyści strategiczne
+   - Przykłady konkretnych ulepszeń procesów i produktów
+   - Zwrot z inwestycji (ROI) i inne mierzalne korzyści
+
 WYMAGANIA:
 - Raport w języku polskim
 - Konkretne, wykonalne rekomendacje
@@ -88,5 +104,10 @@ WYMAGANIA:
 
 Dane do analizy:
 {gaps_data}
+
+DODATKOWY KONTEKST:
+Poniżej znajdują się odpowiedzi z jednego z kwestionariuszy (CLIMB_2), które mogą (ale nie muszą) być wykorzystane jako informacje uzupełniające do wygenerowania rekomendacji. Te dane mogą pomóc w lepszym zrozumieniu specyfiki organizacji i kontekstu biznesowego:
+
+{supplementary_context}
 
 Przygotuj profesjonalny raport w formacie Markdown."""

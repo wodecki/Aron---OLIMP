@@ -33,116 +33,42 @@ def recommend(state: DocumentState) -> DocumentState:
             with open("./config/prompts.toml", "rb") as f:
                 prompts_config = tomllib.load(f)
             
-            if "recommend" not in prompts_config:
-                # Create default prompt if not in config
-                recommendation_prompt = """
-Jesteś ekspertem ds. transformacji cyfrowej i implementacji AI w organizacjach. 
-
-Na podstawie analizy luk w obszarach OLIMP, przygotuj szczegółowy raport z rekomendacjami dla firmy, która chce płynnie przejść z obecnego stanu do poziomu E (maksymalnego) poprzez stany przejściowe.
-
-Dane wejściowe to analiza luk w formacie JSON, która zawiera:
-- Dla każdej sekcji (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY)
-- Dla każdego pytania: obecny poziom (present) i kroki do poziomu E (steps)
-- Każdy poziom zawiera literę (A-E) i szczegółowy opis
-
-STRUKTURA RAPORTU:
-1. **Streszczenie wykonawcze**
-   - Ogólna ocena obecnego stanu organizacji
-   - Kluczowe obszary wymagające uwagi
-   - Priorytety transformacji
-
-2. **Analiza według obszarów**
-   - Dla każdego obszaru (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY):
-     - Obecny stan i główne wyzwania
-     - Rekomendowane ścieżki rozwoju
-     - Konkretne działania do podjęcia
-
-3. **Plan implementacji**
-   - Faza 1 (0-6 miesięcy): Działania pilotażowe i podstawy
-   - Faza 2 (6-18 miesięcy): Rozwój i skalowanie
-   - Faza 3 (18-36 miesięcy): Optymalizacja i doskonałość
-
-4. **Zasoby i budżet**
-   - Szacowany budżet dla każdej fazy
-   - Potrzebne zasoby ludzkie
-   - Technologie i narzędzia do wdrożenia
-
-5. **Wskaźniki sukcesu i monitoring**
-   - KPI dla każdego obszaru
-   - Sposoby mierzenia postępu
-   - Punkty kontrolne
-
-WYMAGANIA:
-- Raport w języku polskim
-- Konkretne, wykonalne rekomendacje
-- Uwzględnienie specyfiki biznesowej
-- Realistyczne timeline'y
-- Fokus na płynne przejście między poziomami
-
-Dane do analizy:
-{gaps_data}
-
-Przygotuj profesjonalny raport w formacie Markdown.
-"""
-            else:
-                recommendation_prompt = prompts_config["recommend"]["recommendation_prompt"]
+            if "recommend" not in prompts_config or "recommendation_prompt" not in prompts_config["recommend"]:
+                print("Error: recommendation_prompt not found in config/prompts.toml")
+                return state
+            
+            recommendation_prompt = prompts_config["recommend"]["recommendation_prompt"]
                 
         except Exception as e:
-            print(f"Error loading prompt config: {e}, using default prompt")
-            # Use the default prompt from above
-            recommendation_prompt = """
-Jesteś ekspertem ds. transformacji cyfrowej i implementacji AI w organizacjach. 
-
-Na podstawie analizy luk w obszarach OLIMP, przygotuj szczegółowy raport z rekomendacjami dla firmy, która chce płynnie przejść z obecnego stanu do poziomu E (maksymalnego) poprzez stany przejściowe.
-
-Dane wejściowe to analiza luk w formacie JSON, która zawiera:
-- Dla każdej sekcji (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY)
-- Dla każdego pytania: obecny poziom (present) i kroki do poziomu E (steps)
-- Każdy poziom zawiera literę (A-E) i szczegółowy opis
-
-STRUKTURA RAPORTU:
-1. **Streszczenie wykonawcze**
-   - Ogólna ocena obecnego stanu organizacji
-   - Kluczowe obszary wymagające uwagi
-   - Priorytety transformacji
-
-2. **Analiza według obszarów**
-   - Dla każdego obszaru (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY):
-     - Obecny stan i główne wyzwania
-     - Rekomendowane ścieżki rozwoju
-     - Konkretne działania do podjęcia
-
-3. **Plan implementacji**
-   - Faza 1 (0-6 miesięcy): Działania pilotażowe i podstawy
-   - Faza 2 (6-18 miesięcy): Rozwój i skalowanie
-   - Faza 3 (18-36 miesięcy): Optymalizacja i doskonałość
-
-4. **Zasoby i budżet**
-   - Szacowany budżet dla każdej fazy
-   - Potrzebne zasoby ludzkie
-   - Technologie i narzędzia do wdrożenia
-
-5. **Wskaźniki sukcesu i monitoring**
-   - KPI dla każdego obszaru
-   - Sposoby mierzenia postępu
-   - Punkty kontrolne
-
-WYMAGANIA:
-- Raport w języku polskim
-- Konkretne, wykonalne rekomendacje
-- Uwzględnienie specyfiki biznesowej
-- Realistyczne timeline'y
-- Fokus na płynne przejście między poziomami
-
-Dane do analizy:
-{gaps_data}
-
-Przygotuj profesjonalny raport w formacie Markdown.
-"""
+            print(f"Error loading prompt config: {e}")
+            return state
         
-        # Format gaps data as JSON string for the prompt
+        # Load supplementary questionnaire answers for context
+        supplementary_answers = None
+        try:
+            with open("./data/process/A_1.json", "r", encoding="utf-8") as f:
+                supplementary_answers = json.load(f)
+            print("Loaded supplementary questionnaire data (A_1.json) for context")
+        except FileNotFoundError:
+            print("A_1.json not found - proceeding without supplementary context")
+        except Exception as e:
+            print(f"Error loading A_1.json: {e} - proceeding without supplementary context")
+        
+        # Format gaps data and supplementary context as JSON strings for the prompt
         gaps_json = json.dumps(state["gaps"], ensure_ascii=False, indent=2)
-        formatted_prompt = recommendation_prompt.format(gaps_data=gaps_json)
+        
+        if supplementary_answers:
+            supplementary_json = json.dumps(supplementary_answers, ensure_ascii=False, indent=2)
+            formatted_prompt = recommendation_prompt.format(
+                gaps_data=gaps_json,
+                supplementary_context=supplementary_json
+            )
+        else:
+            # If no supplementary data, format prompt without it
+            formatted_prompt = recommendation_prompt.format(
+                gaps_data=gaps_json,
+                supplementary_context="Brak dodatkowych danych z kwestionariusza."
+            )
         
         print("Generating recommendations with Gemini...")
         

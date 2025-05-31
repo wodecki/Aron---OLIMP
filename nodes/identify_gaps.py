@@ -1,5 +1,6 @@
 import json
 import os
+import tomllib
 from state import DocumentState
 from typing import Dict, List, Any
 
@@ -15,14 +16,19 @@ def identify_gaps(state: DocumentState) -> DocumentState:
     Returns:
         Updated state with gaps analysis
     """
-    print("Analyzing gaps in OLIMP answers...")
-    
-    # Target sections to analyze
-    target_sections = [
-        "TECHNOLOGIA I INFRASTRUKTURA",
-        "LUDZIE I KOMPETENCJE", 
-        "ORGANIZACJA I PROCESY"
-    ]
+    # Load target sections from configuration
+    try:
+        with open("./config/areas_for_improvement.toml", "rb") as f:
+            config = tomllib.load(f)
+        target_sections = config["gap_analysis"]["target_sections"]
+    except Exception as e:
+        print(f"Error loading configuration: {e}")
+        # Fallback to hardcoded sections
+        target_sections = [
+            "TECHNOLOGIA I INFRASTRUKTURA",
+            "LUDZIE I KOMPETENCJE", 
+            "ORGANIZACJA I PROCESY"
+        ]
     
     # Answer level progression mapping
     level_progression = {
@@ -58,7 +64,6 @@ def identify_gaps(state: DocumentState) -> DocumentState:
         section_name = section.get("section_name", "")
         
         if section_name in target_sections:
-            print(f"Analyzing section: {section_name}")
             gaps[section_name] = {}
             
             # Process each question in the section
@@ -87,31 +92,10 @@ def identify_gaps(state: DocumentState) -> DocumentState:
                         },
                         "steps": steps_verbose
                     }
-                    
-                    print(f"  Question: {question_text[:60]}...")
-                    print(f"    Present level: {selected_answer} - {present_verbose[:80]}...")
-                    print(f"    Steps to E: {[step['level'] for step in steps_verbose]}")
     
-    # Print summary of gaps
-    print("\n=== GAPS ANALYSIS SUMMARY ===")
-    for section_name, section_gaps in gaps.items():
-        print(f"\n{section_name}:")
-        for question_text, gap_info in section_gaps.items():
-            present = gap_info["present"]
-            steps = gap_info["steps"]
-            
-            print(f"  • {question_text[:80]}...")
-            print(f"    Current: {present['level']} - {present['description']}")
-            
-            if steps:
-                print("    Path to E:")
-                for step in steps:
-                    print(f"      {step['level']}: {step['description']}")
-            else:
-                print("    Already at maximum (E)")
-            print()
-    
-    print(f"Total questions analyzed: {sum(len(section_gaps) for section_gaps in gaps.values())}")
+    # Print essential summary
+    total_questions = sum(len(section_gaps) for section_gaps in gaps.values())
+    print(f"Gaps analysis completed: {total_questions} questions across {len(gaps)} sections")
     
     # Save gaps to JSON file
     # Determine the output filename based on integrated file name
@@ -132,11 +116,9 @@ def identify_gaps(state: DocumentState) -> DocumentState:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(gaps, f, ensure_ascii=False, indent=2)
-        print(f"Gaps analysis saved to {output_path}")
+        print(f"Results saved to {output_path}")
     except Exception as e:
         print(f"Error saving gaps to file: {e}")
-    
-    print("Gaps analysis completed.")
     
     # Update state with gaps
     return {

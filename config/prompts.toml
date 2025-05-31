@@ -41,3 +41,52 @@ Return the data in this JSON structure:
 }}
 
 Extract the data as JSON, making sure to correctly identify which column (A, B, C, D, or E) contains the "X" or "V" mark for each question."""
+
+[recommend]
+recommendation_prompt = """Jesteś ekspertem ds. transformacji cyfrowej i implementacji AI w organizacjach. 
+
+Na podstawie analizy luk w obszarach OLIMP, przygotuj szczegółowy raport z rekomendacjami dla firmy, która chce płynnie przejść z obecnego stanu do poziomu E (maksymalnego) poprzez stany przejściowe.
+
+Dane wejściowe to analiza luk w formacie JSON, która zawiera:
+- Dla każdej sekcji (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY)
+- Dla każdego pytania: obecny poziom (present) i kroki do poziomu E (steps)
+- Każdy poziom zawiera literę (A-E) i szczegółowy opis
+
+STRUKTURA RAPORTU:
+1. **Streszczenie wykonawcze**
+   - Ogólna ocena obecnego stanu organizacji
+   - Kluczowe obszary wymagające uwagi
+   - Priorytety transformacji
+
+2. **Analiza według obszarów**
+   - Dla każdego obszaru (TECHNOLOGIA I INFRASTRUKTURA, LUDZIE I KOMPETENCJE, ORGANIZACJA I PROCESY):
+     - Obecny stan i główne wyzwania
+     - Rekomendowane ścieżki rozwoju
+     - Konkretne działania do podjęcia
+
+3. **Plan implementacji**
+   - Faza 1 (0-6 miesięcy): Działania pilotażowe i podstawy
+   - Faza 2 (6-18 miesięcy): Rozwój i skalowanie
+   - Faza 3 (18-36 miesięcy): Optymalizacja i doskonałość
+
+4. **Zasoby i budżet**
+   - Szacowany budżet dla każdej fazy
+   - Potrzebne zasoby ludzkie
+   - Technologie i narzędzia do wdrożenia
+
+5. **Wskaźniki sukcesu i monitoring**
+   - KPI dla każdego obszaru
+   - Sposoby mierzenia postępu
+   - Punkty kontrolne
+
+WYMAGANIA:
+- Raport w języku polskim
+- Konkretne, wykonalne rekomendacje
+- Uwzględnienie specyfiki biznesowej
+- Realistyczne timeline'y
+- Fokus na płynne przejście między poziomami
+
+Dane do analizy:
+{gaps_data}
+
+Przygotuj profesjonalny raport w formacie Markdown."""

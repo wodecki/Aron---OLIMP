@@ -1,6 +1,7 @@
 import os
 import json
 import glob
+import tomllib
 from pathlib import Path
 import google.generativeai as genai
 from state import DocumentState
@@ -86,49 +87,13 @@ def extract_answers(state: DocumentState) -> DocumentState:
             
             print(f"PDF uploaded to Gemini. Extracting sections, questions, and answers...")
             
-            # Create extraction prompt
-            extraction_prompt = f"""Analyze this Polish questionnaire PDF document and extract the structure in JSON format.
-
-The document contains sections (OBSZAR), questions (PYTANIA), and answers (ODPOWIEDZI) with options A, B, C, D, E.
-The selected answers are marked with "X" or "V" marks in the document. Look carefully at the visual layout:
-- Each row represents a question
-- Columns A, B, C, D, E contain the answer options
-- The "X" or "V" mark appears in the column corresponding to the selected answer
-
-IMPORTANT: Pay close attention to which column contains the "X" or "V" mark for each question. This indicates the selected answer option.
-
-Please extract:
-1. Section names and their question counts
-2. All questions within each section
-3. All answer options (A, B, C, D, E) for each question
-4. Which answer option is selected (marked with X or V) for each question - look carefully at the visual positioning
-
-Return the data in this JSON structure:
-{{
-  "questionnaire": "{questionnaire_type}",
-  "questionnaire_title": "title of the questionnaire",
-  "sections": [
-    {{
-      "section_name": "name of the section",
-      "question_count": number_of_questions,
-      "questions": [
-        {{
-          "question_text": "the question text",
-          "answer_options": {{
-            "A": "option A text",
-            "B": "option B text", 
-            "C": "option C text",
-            "D": "option D text",
-            "E": "option E text"
-          }},
-          "selected_answer": "A/B/C/D/E"
-        }}
-      ]
-    }}
-  ]
-}}
-
-Extract the data as JSON, making sure to correctly identify which column (A, B, C, D, or E) contains the "X" or "V" mark for each question."""
+            # Load extraction prompt from config
+            with open("./config/prompts.toml", "rb") as f:
+                prompts_config = tomllib.load(f)
+            
+            extraction_prompt = prompts_config["extract_answers"]["extraction_prompt"].format(
+                questionnaire_type=questionnaire_type
+            )
             
             # Get structured data from Gemini
             response = model.generate_content([pdf_file_obj, extraction_prompt])

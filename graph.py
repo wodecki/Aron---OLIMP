@@ -17,24 +17,27 @@ except ImportError:
 def should_continue_evaluation(state: DocumentState) -> Literal["recommend", END]:
     """
     Conditional edge function to determine if evaluation should continue or end.
+    Implements 3-iteration limit with final report delivery.
     
     Returns:
-        "recommend" if recommendations need revision
-        END if recommendations are approved or max iterations reached
+        "recommend" if recommendations need revision (iterations 1-2)
+        END if recommendations are approved OR iteration 3 reached (final report)
     """
-    # Check if recommendations are approved
-    if state.get("recommendation_approved", False):
+    max_iterations = 3
+    current_iterations = state.get("evaluation_iterations", 0)
+    approved = state.get("recommendation_approved", False)
+    
+    # Always end after iteration 3 (final report delivery)
+    if current_iterations >= max_iterations:
+        print(f"📋 Iteration {max_iterations} completed - delivering final report to user")
+        return END
+    
+    # End if approved before max iterations
+    if approved:
         print("✅ Recommendations approved - ending evaluation loop")
         return END
     
-    # Check iteration limit (safety mechanism)
-    max_iterations = 3
-    current_iterations = state.get("evaluation_iterations", 0)
-    
-    if current_iterations >= max_iterations:
-        print(f"⚠️ Maximum iterations ({max_iterations}) reached - ending evaluation loop")
-        return END
-    
+    # Continue for revision (iterations 1-2 only)
     print(f"🔄 Revision needed - returning to recommend node (iteration {current_iterations + 1})")
     return "recommend"
 

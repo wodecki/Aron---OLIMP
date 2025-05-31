@@ -121,17 +121,17 @@ def evaluation(state: DocumentState) -> DocumentState:
         # Store evaluation feedback
         state["evaluation_feedback"] = evaluation_feedback
         
-        # Parse evaluation result - look for approval indicators
+        # Parse evaluation result using the specific format from prompts.toml
         evaluation_lower = evaluation_feedback.lower()
         
-        # Check for explicit approval/rejection keywords or score
+        # Check for approval based on the structured format from config
         approved = False
         
-        # Look for score patterns
+        # Look for score patterns as defined in the evaluation prompt format
         import re
         score_patterns = [
             r'łączny wynik.*?(\d+)/100',
-            r'wynik.*?(\d+)/100',
+            r'wynik.*?(\d+)/100', 
             r'punktów.*?(\d+)/100',
             r'(\d+)/100\s*punktów'
         ]
@@ -143,27 +143,40 @@ def evaluation(state: DocumentState) -> DocumentState:
                 score = int(match.group(1))
                 break
         
-        # Determine approval based on score or keywords
+        # Determine approval based on score and quality level from config format
         if score is not None:
             approved = score >= MIN_APPROVAL_SCORE
             print(f"Evaluation score: {score}/100 (threshold: {MIN_APPROVAL_SCORE})")
-        else:
-            # Fallback to keyword detection
-            approval_keywords = ["doskonały", "bardzo dobry", "akceptuję", "approved", "zatwierdzone"]
-            rejection_keywords = ["wymaga poprawy", "niewystarczający", "revision_needed", "odrzucone"]
             
-            if any(keyword in evaluation_lower for keyword in approval_keywords):
+            # Also check for quality level indicators from the config format
+            quality_levels = ["doskonały", "bardzo dobry"]  # Levels that indicate approval
+            if any(level in evaluation_lower for level in quality_levels):
                 approved = True
-            elif any(keyword in evaluation_lower for keyword in rejection_keywords):
+        else:
+            # Fallback to quality level detection from config format
+            approval_indicators = ["doskonały", "bardzo dobry", "akceptuję"]
+            rejection_indicators = ["wymagający poprawy", "niewystarczający"]
+            
+            if any(indicator in evaluation_lower for indicator in approval_indicators):
+                approved = True
+            elif any(indicator in evaluation_lower for indicator in rejection_indicators):
                 approved = False
             else:
-                # Default to approval if max iterations reached
+                # For iteration 3, approve regardless (final report)
                 approved = state["evaluation_iterations"] >= MAX_EVALUATION_ITERATIONS
+        
+        # Special handling for final iteration (iteration 3)
+        if state["evaluation_iterations"] >= MAX_EVALUATION_ITERATIONS:
+            approved = True  # Force approval on final iteration
+            print(f"📋 Final iteration ({MAX_EVALUATION_ITERATIONS}) reached - delivering final report")
         
         state["recommendation_approved"] = approved
         
         if approved:
-            print("✅ Recommendations APPROVED by evaluator")
+            if state["evaluation_iterations"] >= MAX_EVALUATION_ITERATIONS:
+                print("✅ Final recommendations delivered to user")
+            else:
+                print("✅ Recommendations APPROVED by evaluator")
         else:
             print(f"❌ Recommendations need revision (iteration {state['evaluation_iterations']}/{MAX_EVALUATION_ITERATIONS})")
         
@@ -176,11 +189,21 @@ def evaluation(state: DocumentState) -> DocumentState:
         try:
             with open(evaluation_path, "w", encoding="utf-8") as f:
                 f.write(f"# Evaluation Report - Iteration {state['evaluation_iterations']}\\n\\n")
-                f.write(f"**Status**: {'APPROVED' if approved else 'REVISION_NEEDED'}\\n")
+                
+                # Status based on iteration and approval
+                if state['evaluation_iterations'] >= MAX_EVALUATION_ITERATIONS:
+                    status = "FINAL_REPORT_DELIVERED"
+                elif approved:
+                    status = "APPROVED"
+                else:
+                    status = "REVISION_NEEDED"
+                
+                f.write(f"**Status**: {status}\\n")
                 if score is not None:
                     f.write(f"**Score**: {score}/100\\n")
+                f.write(f"**Iteration**: {state['evaluation_iterations']}/{MAX_EVALUATION_ITERATIONS}\\n")
                 f.write(f"**Timestamp**: {Path().absolute()}\\n\\n")
-                f.write("## Detailed Evaluation\\n\\n")
+                f.write("## Detailed Evaluation (from config/prompts.toml criteria)\\n\\n")
                 f.write(evaluation_feedback)
             print(f"Evaluation saved to {evaluation_path}")
         except Exception as e:
@@ -192,8 +215,9 @@ def evaluation(state: DocumentState) -> DocumentState:
         
     except Exception as e:
         print(f"Error during evaluation: {e}")
-        # On error, approve after max iterations to prevent infinite loops
+        # On error, approve after max iterations to deliver final report
         if state.get("evaluation_iterations", 0) >= MAX_EVALUATION_ITERATIONS:
             state["recommendation_approved"] = True
-            state["evaluation_feedback"] = f"Evaluation error after {MAX_EVALUATION_ITERATIONS} iterations. Auto-approved."
+            state["evaluation_feedback"] = f"Evaluation error after {MAX_EVALUATION_ITERATIONS} iterations. Final report delivered."
+            print("📋 Delivering final report due to evaluation error")
         return state

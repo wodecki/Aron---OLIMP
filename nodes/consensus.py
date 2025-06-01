@@ -76,11 +76,16 @@ def consensus(state: DocumentState) -> DocumentState:
         # Initialize Gemini Pro 2.5 for consensus
         from langchain_google_genai import ChatGoogleGenerativeAI
         
+        google_api_key = os.getenv("GOOGLE_API_KEY")
+        print(f"Google API key available: {bool(google_api_key)}")
+        if google_api_key:
+            print(f"API key length: {len(google_api_key)}")
+        
         consensus_llm = ChatGoogleGenerativeAI(
             model="gemini-2.5-pro-preview-05-06",
             temperature=0.1,  # Low temperature for consistent synthesis
             max_tokens=None,  # Let Gemini use its full capacity
-            google_api_key=os.getenv("GEMINI_API_KEY")
+            google_api_key=google_api_key
         )
         
         print("Initialized consensus model: Gemini Pro 2.5 (extended output)")

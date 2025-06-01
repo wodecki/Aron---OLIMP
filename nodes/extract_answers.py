@@ -3,8 +3,12 @@ import json
 import glob
 import tomllib
 from pathlib import Path
+from dotenv import load_dotenv
 import google.generativeai as genai
 from state import DocumentState
+
+# Load environment variables
+load_dotenv()
 
 def extract_answers(state: DocumentState) -> DocumentState:
     """

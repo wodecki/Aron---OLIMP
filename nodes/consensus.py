@@ -73,33 +73,30 @@ def consensus(state: DocumentState) -> DocumentState:
             return state
     
     try:
-        # Initialize Gemini for consensus
-        consensus_model = os.getenv("GEMINI_MODEL", "gemini-2.5-pro-preview-05-06")
+        # Initialize Gemini Pro 2.5 for consensus
+        from langchain_google_genai import ChatGoogleGenerativeAI
         
         consensus_llm = ChatGoogleGenerativeAI(
-            model=consensus_model,
+            model="gemini-2.5-pro-preview-05-06",
             temperature=0.1,  # Low temperature for consistent synthesis
-            max_tokens=65536,
-            timeout=None,
-            max_retries=2,
-            google_api_key=os.getenv("GOOGLE_API_KEY")
+            max_tokens=None,  # Let Gemini use its full capacity
+            google_api_key=os.getenv("GEMINI_API_KEY")
         )
         
-        print(f"Initialized consensus model: {consensus_model}")
+        print("Initialized consensus model: Gemini Pro 2.5 (extended output)")
         
         # Prepare consensus prompt
         gaps_json = json.dumps(state.get('gaps', {}), ensure_ascii=False, indent=2)
         
-        consensus_prompt = f"""Jesteś doświadczonym ekspertem ds. strategii cyfrowej i transformacji AI w organizacjach, odpowiedzialnym za syntezę najwyższej jakości rekomendacji strategicznych. Twoje zadanie to stworzenie kompleksowego, narracyjnego raportu, który stanowi syntezę najlepszych elementów ze wszystkich dostarczonych analiz AI.
+        consensus_prompt = f"""Stwórz kompleksowy raport transformacji AI, syntezując najlepsze elementy z trzech analiz (OpenAI, Anthropic, Gemini). 
 
-## KONTEKST I ZADANIE
-Otrzymałeś niezależne analizy od trzech różnych modeli AI (OpenAI, Anthropic, Gemini), każdy z unikatową perspektywą i głębokością analizy. Twoim zadaniem jest stworzenie JEDNEGO, SPÓJNEGO, KOMPLEKSOWEGO raportu, który:
+ZADANIE: Zbuduj szczegółowy, narracyjny raport strategiczny (minimum 10000 słów) który:
+1. Syntetyzuje najlepsze insights ze wszystkich analiz
+2. Eliminuje słabości pojedynczych raportów  
+3. Zawiera praktyczne, wykonalne rekomendacje
+4. Ma charakter profesjonalnego dokumentu strategicznego
 
-1. **Wykorzystuje najlepsze insights ze wszystkich analiz**
-2. **Eliminuje słabości i luki pojedynczych raportów**
-3. **Tworzy narracyjną, angażującą prezentację strategii**
-4. **Dostarcza praktyczne, wykonalne rekomendacje**
-5. **Ma charakter profesjonalnego dokumentu strategicznego**
+WAŻNE: Generuj PEŁNY, DŁUGI raport - nie skracaj, nie przerywaj, kontynuuj do końca wszystkich sekcji.
 
 ## DANE WEJŚCIOWE
 
@@ -219,7 +216,10 @@ Stwórz **KOMPLEKSOWY RAPORT TRANSFORMACJI AI**, który:
 - Służy jako kompletny przewodnik strategiczny dla organizacji
 - Ma strukturę profesjonalnego dokumentu konsultingowego
 
-Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może go użyć jako głównego dokumentu sterującego całą transformacją AI."""
+Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może go użyć jako głównego dokumentu sterującego całą transformacją AI.
+
+ Wazne: raport powinien mieć minimum 10000 słów. Generuj PEŁNY, DŁUGI raport - nie skracaj, nie przerywaj, kontynuuj do końca wszystkich sekcji.
+"""
 
         print("Generating consensus recommendation...")
         
@@ -228,6 +228,11 @@ Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może g
         
         # Generate consensus recommendation
         response = consensus_llm.invoke([message])
+        
+        print(f"Response received: {bool(response.content)}")
+        if response.content:
+            print(f"Response length: {len(response.content)} characters")
+            print(f"Response preview: {response.content[:200]}...")
         
         if not response.content:
             print("Error: No response from consensus model")
@@ -261,7 +266,7 @@ Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może g
                 f.write(f"**Generated from**: {len(available_branches)} AI analysis branches\\n")
                 branch_info = ', '.join(f'{b} ({branch_data[b]["provider"].upper()}: {branch_data[b]["score"]}/100)' for b in available_branches)
                 f.write(f"**Branches**: {branch_info}\\n")
-                f.write(f"**Consensus Model**: {consensus_model}\\n")
+                f.write(f"**Consensus Model**: gemini-2.5-pro-preview-05-06\\n")
                 f.write(f"**Timestamp**: {Path().absolute()}\\n\\n")
                 f.write("---\\n\\n")
                 f.write(consensus_recommendation)
@@ -281,7 +286,9 @@ Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może g
         
         # Create summary file with branch comparison
         summary_filename = "A_consensus_summary.md"
-        summary_path = f"{reports_dir}/{summary_filename}"
+        interim_reports_dir = "./data/reports/interim_reports"
+        os.makedirs(interim_reports_dir, exist_ok=True)
+        summary_path = f"{interim_reports_dir}/{summary_filename}"
         try:
             with open(summary_path, "w", encoding="utf-8") as f:
                 f.write(f"# Consensus Generation Summary\\n\\n")
@@ -297,7 +304,7 @@ Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może g
                 
                 f.write(f"## Consensus Details\\n\\n")
                 f.write(f"- **Total branches processed**: {len(available_branches)}\\n")
-                f.write(f"- **Consensus model**: {consensus_model}\\n")
+                f.write(f"- **Consensus model**: gemini-2.5-pro-preview-05-06\\n")
                 f.write(f"- **Final report**: {consensus_filename}\\n")
                 
             print(f"Consensus summary saved to {summary_path}")

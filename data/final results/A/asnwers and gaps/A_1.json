@@ -23,7 +23,7 @@
             "A": "Interesariusze nie są zaangażowani w zespół projektowy.",
             "B": "Niektórzy interesariusze są zaangażowani, ale tylko lokalnie.",
             "C": "Większość interesariuszy jest zaangażowana, ale nie zawsze, szczególnie gdy są rozproszeni globalnie.",
-            "D": "Interesariusze są angażowani, nawet gdy są rozproszeni globalnie, ale współpraca wymaga jeszcze usprawnień.",
+            "D": "Interesariusze są zaangażowani, nawet gdy są rozproszeni globalnie, ale współpraca wymaga jeszcze usprawnień.",
             "E": "Wszyscy interesariusze są w pełni zaangażowani w zespół projektowy, niezależnie od lokalizacji geograficznej."
           },
           "selected_answer": "C"
@@ -98,7 +98,7 @@
             "D": "Programy są szeroko dostępne i regularnie stosowane.",
             "E": "Programy są systematyczne, dobrze zaplanowane i obejmują wszystkich pracowników."
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "Czy oferowane są indywidualne korepetycje w ramach rozwoju umiejętności?",
@@ -253,7 +253,7 @@
             "D": "Proces montażu komponentów jest zoptymalizowany i uwzględniany na wszystkich etapach.",
             "E": "Proces montażu komponentów jest kluczowym elementem rozwoju produktu i jest optymalizowany we wszystkich projektach."
           },
-          "selected_answer": "C"
+          "selected_answer": "E"
         },
         {
           "question_text": "Jakie znaczenie ma proces testowania i eksperymentowania w rozwoju produktu?",
@@ -440,7 +440,7 @@
             "D": "Wydajność jakościowa jest kluczowa i uwzględniana we wszystkich decyzjach.",
             "E": "Wydajność jakościowa jest kluczowa i jest najważniejszym elementem każdej decyzji projektowej."
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "W jaki sposób zgodność z przepisami i normami wpływa na decyzje?",
@@ -501,7 +501,7 @@
             "D": "Wiedza z poprzednich projektów jest systematycznie odzyskiwana i wykorzystywana w trakcie szczegółowego projektowania.",
             "E": "Wiedza z poprzednich projektów jest w pełni odzyskiwana i wykorzystywana podczas szczegółowego projektowania."
           },
-          "selected_answer": "D"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy wiedza z poprzednich projektów jest odzyskiwana podczas testowania, prototypowania i eksperymentowania?",
@@ -545,7 +545,7 @@
             "D": "Firma regularnie korzysta z zasobów wiedzy z poprzednich projektów i stosuje je w nowych projektach.",
             "E": "Firma w pełni korzysta z zasobów wiedzy z poprzednich projektów i regularnie aktualizuje proces KM."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy zasady projektowania zdefiniowane przez firmę są stale przeglądane i aktualizowane?",
@@ -644,7 +644,7 @@
             "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające poziom dostosowania produktu, które są konsekwentnie stosowane.",
             "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających poziom dostosowania produktu, które są stosowane we wszystkich projektach."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające poziom innowacyjności produktu?",
@@ -699,7 +699,7 @@
             "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające zgodność z przepisami i normami które są konsekwentnie stosowane.",
             "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających zgodność z przepisami i normami, które są stosowane we wszystkich projektach."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające inne aspekty (np. zrównoważony rozwój, estetyka, aspekty moralne)?",
@@ -710,7 +710,7 @@
             "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające inne aspekty, takie jak zrównoważony rozwój, które są konsekwentnie stosowane.",
             "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających inne aspekty, takie jak zrównoważony rozwój, które są stosowane we wszystkich projektach."
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         }
       ]
     },
@@ -782,7 +782,7 @@
             "D": "Wspólne foldery sieciowe są regularnie wykorzystywane i wspierają proces zarządzania wiedzą.",
             "E": "Wspólne foldery sieciowe są priorytetem w przechowywaniu i udostępnianiu wiedzy, regularnie aktualizowane i wykorzystywane."
           },
-          "selected_answer": "D"
+          "selected_answer": "C"
         },
         {
           "question_text": "Na ile intranet wspiera proces zarządzania wiedzą?",
@@ -793,7 +793,7 @@
             "D": "Intranet jest skutecznie wykorzystywany do wspierania zarządzania wiedzą we wszystkich projektach.",
             "E": "Intranet jest integralnym narzędziem wspierającym zarządzanie wiedzą i jest wykorzystywany we wszystkich projektach."
           },
-          "selected_answer": "D"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak wykorzystywane są strony internetowe do pracy nad wspólnymi projektami (np. Wiki) w zarządzaniu wiedzą?",
@@ -804,7 +804,7 @@
             "D": "Strony internetowe do pracy nad wspólnymi projektami są skutecznie wykorzystywane do zarządzania wiedzą.",
             "E": "Strony internetowe do pracy nad wspólnymi projektami są w pełni zintegrowane z procesem zarządzania wiedzą i wspierają projekty na wszystkich etapach."
           },
-          "selected_answer": "C"
+          "selected_answer": "D"
         },
         {
           "question_text": "Jak wykorzystywane są blogi, fora i tablice ogłoszeń w zarządzaniu wiedzą?",
@@ -815,7 +815,7 @@
             "D": "Blogi, fora i tablice ogłoszeń są skutecznie wykorzystywane do zarządzania wiedzą.",
             "E": "Blogi, fora i tablice ogłoszeń są w pełni zintegrowane z procesem zarządzania wiedzą i wspierają projekty na wszystkich etapach."
           },
-          "selected_answer": "D"
+          "selected_answer": "C"
         },
         {
           "question_text": "W jaki sposób systemy PDM/PLM wspierają zarządzanie wiedzą?",
@@ -865,7 +865,7 @@
             "D": "Projektowanie dla X (DFX) jest kluczowym elementem w projektach w zakresie wydajności funkcjonalnej.",
             "E": "Projektowanie dla X (DFX) jest integralną częścią każdego projektu i w pełni wspiera wydajność funkcjonalną."
           },
-          "selected_answer": "D"
+          "selected_answer": "C"
         },
         {
           "question_text": "Jak projektowanie dla X (DFX) wspiera wydajność jakościową produktów (np. projektowanie dla Six Sigma, dla utrzymania ruchu)?",
@@ -942,7 +942,7 @@
             "D": "Funkcje jakości (QFD) są regularnie wdrażane w każdym projekcie i wspierają cały proces rozwoju.",
             "E": "Funkcje jakości (QFD) są w pełni wdrażane na każdym etapie rozwoju produktów i są integralną częścią procesu."
           },
-          "selected_answer": "E"
+          "selected_answer": "C"
         },
         {
           "question_text": "W jakim stopniu analiza ryzyka i awarii (FMEA/FMECA) wspiera proces rozwoju produktów?",
@@ -1069,7 +1069,7 @@
             "D": "KBE i automatyzacja projektowania są skutecznie wykorzystywane w większości projektów.",
             "E": "KBE i automatyzacja projektowania są priorytetem i są stosowane w pełnym zakresie w każdym projekcie."
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "Na ile komputerowe wspomaganie produkcji (CAM) jest używane w procesie wytwarzania?",
@@ -1080,7 +1080,7 @@
             "D": "Komputerowe wspomaganie produkcji (CAM) jest stosowane systematycznie we wszystkich projektach.",
             "E": "Komputerowe wspomaganie produkcji (CAM) jest stosowane w pełnym zakresie we wszystkich projektach."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "W jakim zakresie komputerowe planowanie procesów (CAPP)/cyfrowa produkcja wspiera proces rozwoju produktu?",
@@ -1091,7 +1091,7 @@
             "D": "Komputerowe planowanie procesów (CAPP) jest w pełni stosowane w procesie rozwoju produktu.",
             "E": "Komputerowe planowanie procesów (CAPP) jest integralną częścią każdego procesu rozwoju produktu."
           },
-          "selected_answer": "D"
+          "selected_answer": "C"
         },
         {
           "question_text": "Na ile symulacja zdarzeń dyskretnych (DES) wspiera rozwój produktu?",
@@ -1113,7 +1113,7 @@
             "D": "Rzeczywistość wirtualna (VR) i rozszerzona (AR) są skutecznie wykorzystywane we wszystkich projektach.",
             "E": "Rzeczywistość wirtualna (VR) i rozszerzona (AR) są w pełni zintegrowane z każdym projektem i mają kluczowy wpływ na rozwój produktów."
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "W jaki sposób systemy PDM/PLM wspierają zarządzanie danymi produktu?",
@@ -1124,7 +1124,7 @@
             "D": "Systemy PDM/PLM są w pełni stosowane we wszystkich projektach i wspierają zarządzanie danymi produktu.",
             "E": "Systemy PDM/PLM są w pełni stosowane we wszystkich projektach i są kluczowym narzędziem zarządzania danymi produktu."
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Jakie korzyści przynoszą systemy zarządzania dokumentami (DMS) w projektach rozwoju produktów?",
@@ -1135,7 +1135,7 @@
             "D": "Systemy zarządzania dokumentami (DMS) są w pełni stosowane we wszystkich projektach.",
             "E": "Systemy zarządzania dokumentami (DMS) są integralną częścią każdego projektu i w pełni wspierają zarządzanie dokumentacją."
           },
-          "selected_answer": "D"
+          "selected_answer": "C"
         },
         {
           "question_text": "Na ile system zarządzania przepływem pracy (WMS) wspiera zarządzanie projektami rozwoju produktów?",
@@ -1146,7 +1146,7 @@
             "D": "System zarządzania przepływem pracy (WMS) jest skutecznie stosowany we wszystkich projektach.",
             "E": "System zarządzania przepływem pracy (WMS) jest w pełni stosowany w każdym projekcie."
           },
-          "selected_answer": "C"
+          "selected_answer": "D"
         },
         {
           "question_text": "W jakim stopniu planowanie zasobów przedsiębiorstwa (ERP) jest stosowane w procesach rozwoju produktów?",

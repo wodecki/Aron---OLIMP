@@ -1,6 +1,6 @@
 {
   "questionnaire": "OLIMP",
-  "questionnaire_title": "Kwestionariusz dla modelu OLIMP",
+  "questionnaire_title": "Kwestionariusz został przygotowany w taki sposób, że można za jego pomocą dokonać samooceny organizacji. Kwestionariusz zawiera 64 pytania podzielone na 8 obszarów. Pod każdą z odpowiedzią jest puste pole do zaznaczenia tej odpowiedzi, która jest najbliższa prawdy, jeśli chodzi o dane pytanie.",
   "sections": [
     {
       "section_name": "TECHNOLOGIA I INFRASTRUKTURA",
@@ -81,7 +81,7 @@
             "D": "Przetwarzanie danych w czasie rzeczywistym, z niewielkimi opóźnieniami",
             "E": "W pełni zoptymalizowane przetwarzanie danych w czasie rzeczywistym dla wszystkich zadań Al"
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         },
         {
           "question_text": "Czy Twoja organizacja posiada moc obliczeniową niezbędną do wdrażania i utrzymania modeli Al?",
@@ -114,7 +114,7 @@
             "D": "Większość rozwiązań Al jest skalowalna",
             "E": "W pełni skalowalne rozwiązania Al wdrożone w całej organizacji"
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         }
       ]
     },
@@ -424,7 +424,7 @@
             "D": "Regularna ocena dla większości projektów",
             "E": "W pełni systematyczna ocena wpływu biznesowego i wykonalności dla wszystkich rozwiązań Al"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy Twoja organizacja opracowała system monitorowania wyników wdrożenia AI?",
@@ -446,7 +446,7 @@
             "D": "Regularne analizy konkurencji pod kątem wdrożeń Al",
             "E": "W pełni zintegrowane analizy konkurencji dotyczące generatywnej Al we wszystkich strategicznych obszarach"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         }
       ]
     },
@@ -524,7 +524,7 @@
             "D": "Al wspiera większość procesów projektowania i wytwarzania",
             "E": "Pełne wykorzystanie Al w automatyzacji procesów"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy Twoja organizacja korzysta z generatywnej Al do personalizacji produktów?",

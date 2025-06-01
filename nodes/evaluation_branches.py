@@ -28,7 +28,7 @@ def save_final_branch_recommendation(state: DocumentState, branch_suffix: str, p
         return
     
     final_filename = f"A_recommendations_FINAL_branch_{branch_suffix}_{provider}.md"
-    reports_dir = "./data/reports"
+    reports_dir = "./data/reports/interim_reports"
     os.makedirs(reports_dir, exist_ok=True)
     
     final_path = f"{reports_dir}/{final_filename}"
@@ -237,7 +237,7 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
         
         # Save detailed evaluation to file
         evaluation_filename = f"A_evaluation_branch_{branch_suffix}_{provider}_iter_{branch_data['evaluation_iterations']}.md"
-        reports_dir = "./data/reports"
+        reports_dir = "./data/reports/interim_reports"
         os.makedirs(reports_dir, exist_ok=True)
         
         evaluation_path = f"{reports_dir}/{evaluation_filename}"

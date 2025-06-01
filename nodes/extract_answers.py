@@ -39,21 +39,48 @@ def extract_answers(state: DocumentState) -> DocumentState:
     
     all_files_exist = all(os.path.exists(file_path) for file_path in expected_files)
     
-    if all_files_exist:
-        print("Answers already extracted to JSON...")
-        
-        # Load the integrated results
+    # Check if A.json exists and is valid (skip PDF processing if so)
+    if os.path.exists("./data/process/A.json"):
+        print("A.json exists - loading existing answers...")
         try:
             with open("./data/process/A.json", "r", encoding="utf-8") as f:
                 integrated_results = json.load(f)
             
+            if integrated_results and "OLIMP" in integrated_results:
+                print(f"Successfully loaded A.json with keys: {list(integrated_results.keys())}")
+                return {
+                    **state,
+                    "document_content": f"Loaded existing answers from A.json (skipped PDF processing)",
+                    "answers": integrated_results
+                }
+        except Exception as e:
+            print(f"Error loading A.json: {e}")
+    
+    if all_files_exist:
+        print("All individual JSON files exist, but A.json missing/invalid - attempting to recreate...")
+        try:
+            # Try to recreate A.json from individual files
+            all_results = {}
+            for pdf_path in pdf_files:
+                filename = Path(pdf_path).stem
+                individual_path = f"./data/process/{filename}.json"
+                with open(individual_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                questionnaire_type = data.get("questionnaire", "UNKNOWN")
+                all_results[questionnaire_type] = data
+            
+            # Save integrated file
+            with open("./data/process/A.json", "w", encoding="utf-8") as f:
+                json.dump(all_results, f, ensure_ascii=False, indent=2)
+            
+            print(f"Recreated A.json with keys: {list(all_results.keys())}")
             return {
                 **state,
-                "document_content": f"Previously processed {len(pdf_files)} PDF files with Gemini",
-                "answers": integrated_results
+                "document_content": f"Recreated A.json from existing individual files",
+                "answers": all_results
             }
         except Exception as e:
-            print(f"Error loading existing results: {e}")
+            print(f"Error recreating A.json: {e}")
             # Continue with extraction if loading fails
     
     try:
@@ -95,8 +122,23 @@ def extract_answers(state: DocumentState) -> DocumentState:
                 questionnaire_type=questionnaire_type
             )
             
-            # Get structured data from Gemini
-            response = model.generate_content([pdf_file_obj, extraction_prompt])
+            # Get structured data from Gemini with retry logic
+            max_retries = 3
+            retry_delay = 5  # seconds
+            
+            for attempt in range(max_retries):
+                try:
+                    response = model.generate_content([pdf_file_obj, extraction_prompt])
+                    break  # Success, exit retry loop
+                except Exception as e:
+                    if "503" in str(e) and attempt < max_retries - 1:
+                        print(f"Gemini API 503 error, retrying in {retry_delay}s... (attempt {attempt + 1}/{max_retries})")
+                        import time
+                        time.sleep(retry_delay)
+                        retry_delay *= 2  # Exponential backoff
+                        continue
+                    else:
+                        raise e  # Re-raise if not 503 or max retries reached
             
             try:
                 # Clean the response content to extract JSON

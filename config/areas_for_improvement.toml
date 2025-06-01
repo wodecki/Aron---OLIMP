@@ -3,7 +3,7 @@
 
 [gap_analysis]
 target_sections = [
-    "TECHNOLOGIA I INFRASTRUKTURA",
     "LUDZIE I KOMPETENCJE", 
-    "ORGANIZACJA I PROCESY"
+    "ORGANIZACJA I PROCESY",
+    "BUDŻET"
 ]

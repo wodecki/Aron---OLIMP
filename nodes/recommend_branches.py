@@ -156,7 +156,7 @@ def generate_recommendation_for_branch(state: DocumentState, branch_suffix: str,
         
         # Save to individual file for tracking
         output_filename = f"A_recommendations_branch_{branch_suffix}_{provider}.md"
-        reports_dir = "./data/reports"
+        reports_dir = "./data/reports/interim_reports"
         os.makedirs(reports_dir, exist_ok=True)
         
         output_path = f"{reports_dir}/{output_filename}"

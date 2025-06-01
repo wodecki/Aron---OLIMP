@@ -40,7 +40,8 @@ def create_llm_for_branch(provider: str):
             "model": model_name,
             "temperature": 0.1,  # Anthropic optimal temperature
             "max_retries": 2,
-            "anthropic_api_key": os.getenv("ANTHROPIC_API_KEY")
+            "anthropic_api_key": os.getenv("ANTHROPIC_API_KEY"),
+            "max_tokens":64000  
         }
         return ChatAnthropic(**anthropic_kwargs)
     elif provider == "gemini":

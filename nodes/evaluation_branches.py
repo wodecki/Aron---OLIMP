@@ -73,6 +73,7 @@ def create_evaluator_llm(provider: str):
             "model": model_name,
             "temperature": 0.1,
             "max_retries": 2,
+            "max_tokens": 64000,  # Anthropic models require max_tokens to be set
             "anthropic_api_key": os.getenv("ANTHROPIC_API_KEY")
         }
         return ChatAnthropic(**anthropic_kwargs)

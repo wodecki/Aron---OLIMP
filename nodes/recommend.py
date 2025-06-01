@@ -22,7 +22,7 @@ def create_llm(provider: str, model_name: str, config: dict, provider_config: di
         return ChatGoogleGenerativeAI(
             model=model_name,
             temperature=temperature,
-            max_tokens=config.get("max_tokens", None),
+            max_tokens=65536,
             timeout=config.get("timeout", None),
             max_retries=config.get("max_retries", 2),
             google_api_key=os.getenv("GOOGLE_API_KEY")

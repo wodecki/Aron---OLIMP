@@ -79,7 +79,7 @@ def consensus(state: DocumentState) -> DocumentState:
         consensus_llm = ChatGoogleGenerativeAI(
             model=consensus_model,
             temperature=0.1,  # Low temperature for consistent synthesis
-            max_tokens=None,
+            max_tokens=65536,
             timeout=None,
             max_retries=2,
             google_api_key=os.getenv("GOOGLE_API_KEY")
@@ -99,7 +99,7 @@ Otrzymałeś niezależne analizy od trzech różnych modeli AI (OpenAI, Anthropi
 2. **Eliminuje słabości i luki pojedynczych raportów**
 3. **Tworzy narracyjną, angażującą prezentację strategii**
 4. **Dostarcza praktyczne, wykonalne rekomendacje**
-5. **Ma charakter profesjonalnego dokumentu strategicznego (400-500 linii)**
+5. **Ma charakter profesjonalnego dokumentu strategicznego**
 
 ## DANE WEJŚCIOWE
 

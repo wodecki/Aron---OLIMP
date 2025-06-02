@@ -243,12 +243,9 @@ Multi-layer evaluation system ensures high-quality outputs:
 
 ### Diagnostic Tools
 
-Monitor execution with built-in diagnostics:
+Monitor execution by viewing generated reports:
 
 ```bash
-# Check parallel execution status
-uv run python diagnose_parallel.py
-
 # View generated reports
 ls -la data/reports/
 ```

@@ -279,15 +279,6 @@ Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może g
         except Exception as e:
             print(f"Error saving consensus recommendation: {e}")
         
-        # Also save to main recommendation file for backward compatibility
-        main_filename = "A_recommendations.md"
-        main_path = f"{reports_dir}/{main_filename}"
-        try:
-            with open(main_path, "w", encoding="utf-8") as f:
-                f.write(consensus_recommendation)
-            print(f"✅ Final recommendation also saved to {main_path}")
-        except Exception as e:
-            print(f"Warning: Could not save to main recommendation file: {e}")
         
         # Create summary file with branch comparison
         summary_filename = "A_consensus_summary.md"

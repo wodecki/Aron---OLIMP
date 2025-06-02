@@ -3,7 +3,7 @@
 
 [gap_analysis]
 target_sections = [
-    "DANE",
-    "LUDZIE I KOMPETENCJE", 
-    "BUDŻET"
+    "OBSZAR – LUDZIE I KOMPETENCJE", 
+    "OBSZAR – ORGANIZACJA I PROCESY",
+    "OBSZAR – PRODUKTY I USŁUGI"
 ]

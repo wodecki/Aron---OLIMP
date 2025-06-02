@@ -1,0 +1,420 @@
+{
+  "DANE": {
+    "Czy Twoja organizacja buduje wysokiej jakości zbiory danych?": {
+      "present": {
+        "level": "C",
+        "description": "Budowanie zbiorów danych z umiarkowaną jakością"
+      },
+      "steps": [
+        {
+          "level": "D",
+          "description": "Zbiory danych wysokiej jakości dla większości procesów"
+        },
+        {
+          "level": "E",
+          "description": "W pełni zoptymalizowane zbiory danych o najwyższej jakości"
+        }
+      ]
+    },
+    "Na ile Twoja organizacja automatyzuje analizę i przetwarzanie danych?": {
+      "present": {
+        "level": "B",
+        "description": "Podstawowa automatyzacja w kilku obszarach"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowa automatyzacja dla niektórych procesów"
+        },
+        {
+          "level": "D",
+          "description": "Wysoka automatyzacja analiz i przetwarzania danych"
+        },
+        {
+          "level": "E",
+          "description": "W pełni zautomatyzowane procesy analizy i przetwarzania danych"
+        }
+      ]
+    },
+    "Czy Twoja organizacja centralizuje zbiory danych (np. jeden słownik danych)?": {
+      "present": {
+        "level": "B",
+        "description": "Centralizacja w kilku wybranych obszarach"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowa centralizacja z danymi w różnych systemach"
+        },
+        {
+          "level": "D",
+          "description": "Większość danych zcentralizowana, kilka wyjątków"
+        },
+        {
+          "level": "E",
+          "description": "Pełna centralizacja danych, jeden słownik danych w całej organizacji"
+        }
+      ]
+    },
+    "Czy organizacja korzysta z zaawansowanych narzędzi do oceny jakości danych?": {
+      "present": {
+        "level": "B",
+        "description": "Podstawowe narzędzia, ale rzadko używane"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe wykorzystanie narzędzi do oceny jakości"
+        },
+        {
+          "level": "D",
+          "description": "Narzędzia do oceny jakości danych wykorzystywane w większości przypadków"
+        },
+        {
+          "level": "E",
+          "description": "W pełni zoptymalizowane narzędzia do oceny jakości danych"
+        }
+      ]
+    },
+    "Czy Twoja organizacja ma strategię zarządzania danymi?": {
+      "present": {
+        "level": "C",
+        "description": "Strategia zarządzania danymi stosowana w wybranych obszarach"
+      },
+      "steps": [
+        {
+          "level": "D",
+          "description": "Strategia zarządzania danymi wdrożona w większości procesów"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożona i zoptymalizowana strategia zarządzania danymi"
+        }
+      ]
+    },
+    "Na ile Twoja organizacja automatyzuje proces zbierania i czyszczenia danych?": {
+      "present": {
+        "level": "B",
+        "description": "Podstawowa automatyzacja niektórych etapów procesu"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowa automatyzacja zbierania i czyszczenia danych"
+        },
+        {
+          "level": "D",
+          "description": "Automatyzacja dla większości procesów zbierania i czyszczenia danych"
+        },
+        {
+          "level": "E",
+          "description": "Pełna automatyzacja procesów zbierania i czyszczenia danych"
+        }
+      ]
+    },
+    "Czy organizacja identyfikuje i integruje dane z wewnętrznych i zewnętrznych źródeł?": {
+      "present": {
+        "level": "B",
+        "description": "Dane zidentyfikowane, ale nie w pełni zintegrowane"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowa integracja danych z wybranych źródeł"
+        },
+        {
+          "level": "D",
+          "description": "Większość danych zidentyfikowana i zintegrowana"
+        },
+        {
+          "level": "E",
+          "description": "W pełni zintegrowane dane z wewnętrznych i zewnętrznych źródeł"
+        }
+      ]
+    },
+    "Czy organizacja posiada jeden standardowy model danych i zestaw metadanych?": {
+      "present": {
+        "level": "C",
+        "description": "Częściowe wdrożenie modelu danych i metadanych"
+      },
+      "steps": [
+        {
+          "level": "D",
+          "description": "Większość procesów oparta na jednym modelu danych"
+        },
+        {
+          "level": "E",
+          "description": "W pełni wdrożony jeden standardowy model danych i zbiór metadanych"
+        }
+      ]
+    },
+    "Czy Twoja organizacja korzysta z generatywnej Al do wspomagania wizualizacji danych?": {
+      "present": {
+        "level": "A",
+        "description": "Brak użycia generatywnej Al do wizualizacji danych"
+      },
+      "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowe wykorzystanie Al do prostych wizualizacji"
+        },
+        {
+          "level": "C",
+          "description": "Częściowe wykorzystanie generatywnej Al w wybranych obszarach"
+        },
+        {
+          "level": "D",
+          "description": "generatywna Al wykorzystywana do większości wizualizacji danych"
+        },
+        {
+          "level": "E",
+          "description": "W pełni zintegrowane narzędzia Al do wspomagania wizualizacji danych"
+        }
+      ]
+    }
+  },
+  "LUDZIE I KOMPETENCJE": {
+    "Czy Twoja organizacja rozwija świadomość i zrozumienie rozwiązań generatywnej AI?": {
+      "present": {
+        "level": "B",
+        "description": "Podstawowa świadomość wśród wybranych zespołów"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe zrozumienie i świadomość w wybranych obszarach"
+        },
+        {
+          "level": "D",
+          "description": "Świadomość i zrozumienie w większości działów"
+        },
+        {
+          "level": "E",
+          "description": "Pełne zrozumienie i świadomość generatywnej Al w całej organizacji"
+        }
+      ]
+    },
+    "Czy organizacja szkoli zespoły w zakresie programowania (także promptingu) i analizy danych?": {
+      "present": {
+        "level": "B",
+        "description": "Podstawowe szkolenia w wybranych zespołach"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe szkolenia, ale ograniczone do kilku zespołów"
+        },
+        {
+          "level": "D",
+          "description": "Regularne szkolenia obejmujące większość zespołów"
+        },
+        {
+          "level": "E",
+          "description": "W pełni rozwinięty program szkoleń dla wszystkich zespołów w zakresie Al i analizy danych"
+        }
+      ]
+    },
+    "Czy Twoja organizacja tworzy interdyscyplinarne zespoły ds. AI?": {
+      "present": {
+        "level": "A",
+        "description": "Brak interdyscyplinarnych zespołów ds. Al"
+      },
+      "steps": [
+        {
+          "level": "B",
+          "description": "Tworzenie zespołów w niektórych projektach"
+        },
+        {
+          "level": "C",
+          "description": "Częściowe tworzenie zespołów, ale nie w każdej inicjatywie"
+        },
+        {
+          "level": "D",
+          "description": "Większość projektów posiada interdyscyplinarne zespoły"
+        },
+        {
+          "level": "E",
+          "description": "W pełni zintegrowane interdyscyplinarne zespoły ds. Al we wszystkich projektach"
+        }
+      ]
+    },
+    "Czy organizacja angażuje zewnętrznych konsultantów ds. generatywnej Al do zespołów?": {
+      "present": {
+        "level": "A",
+        "description": "Brak angażowania zewnętrznych konsultantów"
+      },
+      "steps": [
+        {
+          "level": "B",
+          "description": "Sporadyczne zaangażowanie konsultantów do pojedynczych projektów"
+        },
+        {
+          "level": "C",
+          "description": "Konsultanci zewnętrzni angażowani przy wybranych projektach"
+        },
+        {
+          "level": "D",
+          "description": "Regularne angażowanie konsultantów do kluczowych inicjatyw"
+        },
+        {
+          "level": "E",
+          "description": "W pełni zintegrowane wsparcie konsultantów Al we wszystkich istotnych projektach"
+        }
+      ]
+    },
+    "Czy Twoja organizacja szkoli w zakresie zarządzania projektami opartymi o generatywną Al?": {
+      "present": {
+        "level": "A",
+        "description": "Brak szkoleń z zarządzania projektami opartymi o generatywną Al"
+      },
+      "steps": [
+        {
+          "level": "B",
+          "description": "Podstawowe szkolenia dla wybranych osób"
+        },
+        {
+          "level": "C",
+          "description": "Częściowe szkolenia z zarządzania projektami dla wybranych zespołów"
+        },
+        {
+          "level": "D",
+          "description": "Regularne szkolenia w zakresie projektów opartych o generatywną Al"
+        },
+        {
+          "level": "E",
+          "description": "Pełny program szkoleń z zarządzania projektami generatywnymi Al dla wszystkich odpowiednich zespołów"
+        }
+      ]
+    },
+    "Czy istnieje zarządzanie wiedzą w dziedzinie generatywnej Al, aby ułatwić transfer wiedzy między wszystkimi pracownikami?": {
+      "present": {
+        "level": "A",
+        "description": "Pracownicy utrzymują własne bazy wiedzy i nie dzielą się nimi z innymi."
+      },
+      "steps": [
+        {
+          "level": "B",
+          "description": "Istnieją różne platformy, ale nie są one dobrze zorganizowane, co utrudnia pracownikom dostęp do istniejącej wiedzy."
+        },
+        {
+          "level": "C",
+          "description": "Centralna platforma jest w trakcie budowy i jest używana przez poszczególnych pracowników do zarządzania wiedzą."
+        },
+        {
+          "level": "D",
+          "description": "Scentralizowana platforma jest dostępna dla wszystkich pracowników, ale nie wszyscy z niej korzystają."
+        },
+        {
+          "level": "E",
+          "description": "Scentralizowana platforma do gromadzenia wiedzy jest używana przez wszystkich pracowników i jest stale rozbudowywana."
+        }
+      ]
+    }
+  },
+  "BUDŻET": {
+    "Czy Twoja organizacja prowadzi długoterminowe planowanie budżetu na rozwój rozwiązań i infrastruktury wspierającej generatywną AI?": {
+      "present": {
+        "level": "B",
+        "description": "Krótkoterminowe planowanie budżetowe w wybranych projektach"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe planowanie długoterminowe, ograniczone do niektórych projektów"
+        },
+        {
+          "level": "D",
+          "description": "Długoterminowe planowanie budżetowe w większości projektów"
+        },
+        {
+          "level": "E",
+          "description": "Pełne długoterminowe planowanie budżetu na wszystkie projekty i infrastrukturę Al"
+        }
+      ]
+    },
+    "Czy Twoja organizacja przeznacza środki na rozwój kompetencji pracowników w zakresie generatywnej AI?": {
+      "present": {
+        "level": "B",
+        "description": "Sporadyczne finansowanie szkoleń dla wybranych pracowników"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe przeznaczanie środków na rozwój kompetencji"
+        },
+        {
+          "level": "D",
+          "description": "Stałe finansowanie rozwoju kompetencji większości pracowników"
+        },
+        {
+          "level": "E",
+          "description": "Pełne finansowanie rozwoju kompetencji w zakresie Al dla wszystkich pracowników"
+        }
+      ]
+    },
+    "Czy Twoja organizacja finansuje projekty pilotażowe i innowacyjne związane z generatywną AI?": {
+      "present": {
+        "level": "B",
+        "description": "Ograniczone finansowanie pojedynczych projektów"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowe finansowanie projektów pilotażowych i innowacyjnych"
+        },
+        {
+          "level": "D",
+          "description": "Regularne finansowanie większości projektów pilotażowych"
+        },
+        {
+          "level": "E",
+          "description": "Pełne wsparcie finansowe dla wszystkich projektów pilotażowych i innowacyjnych związanych z Al"
+        }
+      ]
+    },
+    "Czy organizacja alokuje środki na zewnętrzne konsultacje dotyczące generatywnej AI?": {
+      "present": {
+        "level": "A",
+        "description": "Brak alokacji środków na zewnętrzne konsultacje dotyczące Al"
+      },
+      "steps": [
+        {
+          "level": "B",
+          "description": "Sporadyczne alokowanie środków na konsultacje w wybranych projektach"
+        },
+        {
+          "level": "C",
+          "description": "Częściowa alokacja środków na zewnętrzne konsultacje"
+        },
+        {
+          "level": "D",
+          "description": "Regularna alokacja środków na konsultacje w większości projektów"
+        },
+        {
+          "level": "E",
+          "description": "Pełna alokacja środków na zewnętrzne konsultacje we wszystkich strategicznych projektach"
+        }
+      ]
+    },
+    "Czy organizacja priorytetyzuje projekty generujące wysoką wartość dodaną dzięki generatywnej AI?": {
+      "present": {
+        "level": "B",
+        "description": "Priorytetyzacja jedynie wybranych projektów"
+      },
+      "steps": [
+        {
+          "level": "C",
+          "description": "Częściowa priorytetyzacja projektów generujących wartość dodaną"
+        },
+        {
+          "level": "D",
+          "description": "Regularna priorytetyzacja większości projektów związanych z Al"
+        },
+        {
+          "level": "E",
+          "description": "Pełna priorytetyzacja projektów Al o najwyższej wartości dodanej"
+        }
+      ]
+    }
+  }
+}

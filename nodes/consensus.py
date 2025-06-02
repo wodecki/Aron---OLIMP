@@ -296,7 +296,7 @@ Raport powinien być na tyle szczegółowy i praktyczny, że organizacja może g
                     f.write(f"- **Score**: {data['score']}/100\\n")
                     f.write(f"- **Iterations**: {data['iterations']}/3\\n")
                     f.write(f"- **Status**: {'✅ Approved' if data['approved'] else '📋 Final (3 iterations)'}\\n")
-                    f.write(f"- **File**: A_recommendations_branch_{branch_suffix}_{data['provider']}.md\\n\\n")
+                    f.write(f"- **File**: {org_letter}_recommendations_branch_{branch_suffix}_{data['provider']}.md\\n\\n")
                 
                 f.write(f"## Consensus Details\\n\\n")
                 f.write(f"- **Total branches processed**: {len(available_branches)}\\n")

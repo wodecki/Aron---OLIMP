@@ -6,6 +6,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import google.generativeai as genai
 from state import DocumentState
+from utils import extract_organization_letter, get_pdf_pattern, get_process_filename
 
 # Load environment variables
 load_dotenv()
@@ -22,8 +23,9 @@ def extract_answers(state: DocumentState) -> DocumentState:
     """
     print("Reading PDF files...")
     
-    # Find all PDF files starting with A_
-    pdf_pattern = "./data/input/A_*.pdf"
+    # Find all PDF files for the organization
+    org_letter = extract_organization_letter()
+    pdf_pattern = get_pdf_pattern(org_letter)
     pdf_files = glob.glob(pdf_pattern)
     pdf_files.sort()  # Ensure consistent order
     
@@ -39,29 +41,30 @@ def extract_answers(state: DocumentState) -> DocumentState:
     for pdf_path in pdf_files:
         filename = Path(pdf_path).stem
         expected_files.append(f"./data/process/{filename}.json")
-    expected_files.append("./data/process/A.json")
+    expected_files.append(f"./data/process/{org_letter}.json")
     
     all_files_exist = all(os.path.exists(file_path) for file_path in expected_files)
     
-    # Check if A.json exists and is valid (skip PDF processing if so)
-    if os.path.exists("./data/process/A.json"):
-        print("A.json exists - loading existing answers...")
+    # Check if {org_letter}.json exists and is valid (skip PDF processing if so)
+    integrated_file = f"./data/process/{org_letter}.json"
+    if os.path.exists(integrated_file):
+        print(f"{org_letter}.json exists - loading existing answers...")
         try:
-            with open("./data/process/A.json", "r", encoding="utf-8") as f:
+            with open(integrated_file, "r", encoding="utf-8") as f:
                 integrated_results = json.load(f)
             
             if integrated_results and "OLIMP" in integrated_results:
-                print(f"Successfully loaded A.json with keys: {list(integrated_results.keys())}")
+                print(f"Successfully loaded {org_letter}.json with keys: {list(integrated_results.keys())}")
                 return {
                     **state,
-                    "document_content": f"Loaded existing answers from A.json (skipped PDF processing)",
+                    "document_content": f"Loaded existing answers from {org_letter}.json (skipped PDF processing)",
                     "answers": integrated_results
                 }
         except Exception as e:
-            print(f"Error loading A.json: {e}")
+            print(f"Error loading {org_letter}.json: {e}")
     
     if all_files_exist:
-        print("All individual JSON files exist, but A.json missing/invalid - attempting to recreate...")
+        print(f"All individual JSON files exist, but {org_letter}.json missing/invalid - attempting to recreate...")
         try:
             # Try to recreate A.json from individual files
             all_results = {}
@@ -74,17 +77,17 @@ def extract_answers(state: DocumentState) -> DocumentState:
                 all_results[questionnaire_type] = data
             
             # Save integrated file
-            with open("./data/process/A.json", "w", encoding="utf-8") as f:
+            with open(integrated_file, "w", encoding="utf-8") as f:
                 json.dump(all_results, f, ensure_ascii=False, indent=2)
             
-            print(f"Recreated A.json with keys: {list(all_results.keys())}")
+            print(f"Recreated {org_letter}.json with keys: {list(all_results.keys())}")
             return {
                 **state,
-                "document_content": f"Recreated A.json from existing individual files",
+                "document_content": f"Recreated {org_letter}.json from existing individual files",
                 "answers": all_results
             }
         except Exception as e:
-            print(f"Error recreating A.json: {e}")
+            print(f"Error recreating {org_letter}.json: {e}")
             # Continue with extraction if loading fails
     
     try:
@@ -219,9 +222,9 @@ def extract_answers(state: DocumentState) -> DocumentState:
             except:
                 pass  # Ignore cleanup errors
         
-        # Create integrated file (A.json)
+        # Create integrated file ({org_letter}.json)
         if all_results:
-            integrated_path = "./data/process/A.json"
+            integrated_path = f"./data/process/{org_letter}.json"
             with open(integrated_path, "w", encoding="utf-8") as f:
                 json.dump(all_results, f, ensure_ascii=False, indent=2)
             

@@ -8,6 +8,7 @@ from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage
 from state import DocumentState
+from utils import extract_organization_letter, get_branch_filename
 
 # Load environment variables
 load_dotenv()
@@ -108,15 +109,17 @@ def generate_recommendation_for_branch(state: DocumentState, branch_suffix: str,
             return state
         
         # Load supplementary context
+        org_letter = extract_organization_letter()
         supplementary_answers = None
+        supplementary_file = f"./data/process/{org_letter}_1.json"
         try:
-            with open("./data/process/A_1.json", "r", encoding="utf-8") as f:
+            with open(supplementary_file, "r", encoding="utf-8") as f:
                 supplementary_answers = json.load(f)
             print(f"Loaded supplementary questionnaire data for Branch {branch_suffix}")
         except FileNotFoundError:
-            print(f"A_1.json not found - proceeding without supplementary context for Branch {branch_suffix}")
+            print(f"{org_letter}_1.json not found - proceeding without supplementary context for Branch {branch_suffix}")
         except Exception as e:
-            print(f"Error loading A_1.json: {e} - proceeding without supplementary context")
+            print(f"Error loading {org_letter}_1.json: {e} - proceeding without supplementary context")
         
         # Format gaps data and supplementary context
         gaps_json = json.dumps(state["gaps"], ensure_ascii=False, indent=2)
@@ -156,7 +159,7 @@ def generate_recommendation_for_branch(state: DocumentState, branch_suffix: str,
         recommendation_report = recommendation_report.strip()
         
         # Save to individual file for tracking
-        output_filename = f"A_recommendations_branch_{branch_suffix}_{provider}.md"
+        output_filename = get_branch_filename("recommendations", branch_suffix, provider, org_letter)
         reports_dir = "./data/reports/interim_reports"
         os.makedirs(reports_dir, exist_ok=True)
         

@@ -9,6 +9,7 @@ from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage
 from state import DocumentState
+from utils import extract_organization_letter, get_final_branch_filename, get_evaluation_filename
 
 # Load environment variables
 load_dotenv()
@@ -27,7 +28,8 @@ def save_final_branch_recommendation(state: DocumentState, branch_suffix: str, p
         print(f"Warning: No recommendation found for Branch {branch_suffix}")
         return
     
-    final_filename = f"A_recommendations_FINAL_branch_{branch_suffix}_{provider}.md"
+    org_letter = extract_organization_letter()
+    final_filename = get_final_branch_filename(branch_suffix, provider, org_letter)
     reports_dir = "./data/reports/interim_reports"
     os.makedirs(reports_dir, exist_ok=True)
     
@@ -138,9 +140,11 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
         gaps_context = json.dumps(state.get("gaps", {}), ensure_ascii=False, indent=2)
         
         # Load supplementary context if available
+        org_letter = extract_organization_letter()
         supplementary_context = ""
+        supplementary_file = f"./data/process/{org_letter}_1.json"
         try:
-            with open("./data/process/A_1.json", "r", encoding="utf-8") as f:
+            with open(supplementary_file, "r", encoding="utf-8") as f:
                 supplementary_data = json.load(f)
                 supplementary_context = json.dumps(supplementary_data, ensure_ascii=False, indent=2)
         except FileNotFoundError:
@@ -237,7 +241,7 @@ def evaluate_branch_recommendation(state: DocumentState, branch_suffix: str, pro
             print(f"❌ Branch {branch_suffix} recommendations need revision (iteration {branch_data['evaluation_iterations']}/{MAX_EVALUATION_ITERATIONS})")
         
         # Save detailed evaluation to file
-        evaluation_filename = f"A_evaluation_branch_{branch_suffix}_{provider}_iter_{branch_data['evaluation_iterations']}.md"
+        evaluation_filename = get_evaluation_filename(branch_suffix, provider, branch_data['evaluation_iterations'], org_letter)
         reports_dir = "./data/reports/interim_reports"
         os.makedirs(reports_dir, exist_ok=True)
         

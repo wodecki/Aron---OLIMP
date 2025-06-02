@@ -7,7 +7,7 @@
       "question_count": 10,
       "questions": [
         {
-          "question_text": "Czy Twoja organizacja posiada skalowalną infrastrukturę IT wspierającą AI?",
+          "question_text": "Czy Twoja organizacja posiada skalowalną infrastrukturę IT wspierającą Al?",
           "answer_options": {
             "A": "Brak skalowalnej infrastruktury, brak uwzględnienia Al",
             "B": "Podstawowa infrastruktura, ale nie skalowalna",
@@ -15,7 +15,7 @@
             "D": "Skalowalna infrastruktura, ograniczona integracja Al",
             "E": "W pełni skalowalna infrastruktura zoptymalizowana pod Al"
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy technologia generatywnej Al jest zintegrowana z innymi systemami (np. ERP, CRM)?",
@@ -26,7 +26,7 @@
             "D": "Integracja z większością systemów, z pewnymi lukami",
             "E": "W pełni zintegrowana generatywna Al we wszystkich głównych systemach"
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
           "question_text": "Na ile zautomatyzowane jest wdrażanie modeli generatywnej AI?",
@@ -40,7 +40,7 @@
           "selected_answer": "A"
         },
         {
-          "question_text": "Czy organizacja korzysta z chmury do przechowywania i przetwarzania danych AI?",
+          "question_text": "Czy organizacja korzysta z chmury do przechowywania i przetwarzania danych Al?",
           "answer_options": {
             "A": "Brak wykorzystania chmury dla Al, dane przechowywane lokalnie",
             "B": "Minimalne korzystanie z chmury do przechowywania danych",
@@ -48,10 +48,10 @@
             "D": "Większość danych Al przechowywana i przetwarzana w chmurze",
             "E": "Pełna adopcja chmury dla wszystkich działań związanych z Al"
           },
-          "selected_answer": "C"
+          "selected_answer": "A"
         },
         {
-          "question_text": "Czy organizacja korzysta z narzędzi do zarządzania cyklem życia modeli AI?",
+          "question_text": "Czy organizacja korzysta z narzędzi do zarządzania cyklem życia modeli Al?",
           "answer_options": {
             "A": "Brak narzędzi do zarządzania cyklem życia modeli Al",
             "B": "Podstawowe narzędzia, ale niedostatecznie wykorzystywane",
@@ -59,10 +59,10 @@
             "D": "Standaryzowane narzędzia dla większości procesów Al",
             "E": "W pełni wdrożone i zoptymalizowane narzędzia do zarządzania cyklem życia modeli Al"
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
-          "question_text": "Czy infrastruktura organizacji jest przygotowana do obsługi dużych zbiorów danych dla AI?",
+          "question_text": "Czy infrastruktura organizacji jest przygotowana do obsługi dużych zbiorów danych dla Al?",
           "answer_options": {
             "A": "Nie jest w stanie obsłużyć dużych zbiorów danych",
             "B": "Podstawowa infrastruktura z ograniczoną pojemnością",
@@ -70,10 +70,10 @@
             "D": "Infrastruktura obsługuje większość dużych zbiorów danych",
             "E": "Zoptymalizowana infrastruktura do obsługi ogromnych zbiorów danych"
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
-          "question_text": "Czy organizacja jest zdolna do przetwarzania danych w czasie rzeczywistym dla AI?",
+          "question_text": "Czy organizacja jest zdolna do przetwarzania danych w czasie rzeczywistym dla Al?",
           "answer_options": {
             "A": "Brak przetwarzania danych w czasie rzeczywistym",
             "B": "Podstawowe przetwarzanie wsadowe",
@@ -90,9 +90,9 @@
             "B": "Podstawowa moc obliczeniowa, wystarczająca dla małych modeli",
             "C": "Umiarkowana moc obliczeniowa, wystarczająca dla niektórych modeli",
             "D": "Wysoka moc obliczeniowa, wystarczająca dla większości aplikacji Al",
-            "E": "Zaawansowana moc obliczeniowa zoptymalizowana pod potrzeby Al"
+            "E": "Zaawansowana moc obliczeniowa zoptymalizowana pod potrzeby AI"
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy w codziennej pracy wykorzystywane są wewnętrzne lub zewnętrzne narzędzia Al (np. ChatGPT, MS Copilot)?",
@@ -114,7 +114,7 @@
             "D": "Większość rozwiązań Al jest skalowalna",
             "E": "W pełni skalowalne rozwiązania Al wdrożone w całej organizacji"
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         }
       ]
     },
@@ -131,7 +131,7 @@
             "D": "Zbiory danych wysokiej jakości dla większości procesów",
             "E": "W pełni zoptymalizowane zbiory danych o najwyższej jakości"
           },
-          "selected_answer": "C"
+          "selected_answer": "D"
         },
         {
           "question_text": "Na ile Twoja organizacja automatyzuje analizę i przetwarzanie danych?",
@@ -142,7 +142,7 @@
             "D": "Wysoka automatyzacja analiz i przetwarzania danych",
             "E": "W pełni zautomatyzowane procesy analizy i przetwarzania danych"
           },
-          "selected_answer": "B"
+          "selected_answer": "D"
         },
         {
           "question_text": "Czy Twoja organizacja centralizuje zbiory danych (np. jeden słownik danych)?",
@@ -153,7 +153,7 @@
             "D": "Większość danych zcentralizowana, kilka wyjątków",
             "E": "Pełna centralizacja danych, jeden słownik danych w całej organizacji"
           },
-          "selected_answer": "B"
+          "selected_answer": "D"
         },
         {
           "question_text": "Czy organizacja korzysta z zaawansowanych narzędzi do oceny jakości danych?",
@@ -164,7 +164,7 @@
             "D": "Narzędzia do oceny jakości danych wykorzystywane w większości przypadków",
             "E": "W pełni zoptymalizowane narzędzia do oceny jakości danych"
           },
-          "selected_answer": "C"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy Twoja organizacja ma strategię zarządzania danymi?",
@@ -175,7 +175,7 @@
             "D": "Strategia zarządzania danymi wdrożona w większości procesów",
             "E": "W pełni wdrożona i zoptymalizowana strategia zarządzania danymi"
           },
-          "selected_answer": "C"
+          "selected_answer": "A"
         },
         {
           "question_text": "Na ile Twoja organizacja automatyzuje proces zbierania i czyszczenia danych?",
@@ -197,7 +197,7 @@
             "D": "Większość danych zidentyfikowana i zintegrowana",
             "E": "W pełni zintegrowane dane z wewnętrznych i zewnętrznych źródeł"
           },
-          "selected_answer": "B"
+          "selected_answer": "D"
         },
         {
           "question_text": "Czy organizacja posiada jeden standardowy model danych i zestaw metadanych?",
@@ -208,7 +208,7 @@
             "D": "Większość procesów oparta na jednym modelu danych",
             "E": "W pełni wdrożony jeden standardowy model danych i zbiór metadanych"
           },
-          "selected_answer": "B"
+          "selected_answer": "E"
         },
         {
           "question_text": "Czy Twoja organizacja korzysta z generatywnej Al do wspomagania wizualizacji danych?",
@@ -219,7 +219,7 @@
             "D": "generatywna Al wykorzystywana do większości wizualizacji danych",
             "E": "W pełni zintegrowane narzędzia Al do wspomagania wizualizacji danych"
           },
-          "selected_answer": "C"
+          "selected_answer": "A"
         }
       ]
     },
@@ -228,7 +228,7 @@
       "question_count": 6,
       "questions": [
         {
-          "question_text": "Czy Twoja organizacja rozwija świadomość i zrozumienie rozwiązań generatywnej AI?",
+          "question_text": "Czy Twoja organizacja rozwija świadomość i zrozumienie rozwiązań generatywnej Al?",
           "answer_options": {
             "A": "Brak świadomości rozwiązań generatywnej Al",
             "B": "Podstawowa świadomość wśród wybranych zespołów",
@@ -236,7 +236,7 @@
             "D": "Świadomość i zrozumienie w większości działów",
             "E": "Pełne zrozumienie i świadomość generatywnej Al w całej organizacji"
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "Czy organizacja szkoli zespoły w zakresie programowania (także promptingu) i analizy danych?",
@@ -258,7 +258,7 @@
             "D": "Większość projektów posiada interdyscyplinarne zespoły",
             "E": "W pełni zintegrowane interdyscyplinarne zespoły ds. Al we wszystkich projektach"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy organizacja angażuje zewnętrznych konsultantów ds. generatywnej Al do zespołów?",
@@ -269,10 +269,10 @@
             "D": "Regularne angażowanie konsultantów do kluczowych inicjatyw",
             "E": "W pełni zintegrowane wsparcie konsultantów Al we wszystkich istotnych projektach"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
-          "question_text": "Czy Twoja organizacja szkoli w zakresie zarządzania projektami opartymi o generatywną Al?",
+          "question_text": "Czy Twoja organizacja szkoli w zakresie zarządzania projektami opartymi o generatywną AI?",
           "answer_options": {
             "A": "Brak szkoleń z zarządzania projektami opartymi o generatywną Al",
             "B": "Podstawowe szkolenia dla wybranych osób",
@@ -291,7 +291,7 @@
             "D": "Scentralizowana platforma jest dostępna dla wszystkich pracowników, ale nie wszyscy z niej korzystają.",
             "E": "Scentralizowana platforma do gromadzenia wiedzy jest używana przez wszystkich pracowników i jest stale rozbudowywana."
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         }
       ]
     },
@@ -311,7 +311,7 @@
           "selected_answer": "A"
         },
         {
-          "question_text": "Na ile Twoja organizacja automatyzuje procesy rozwoju produktu z wykorzystaniem generatywnej AI?",
+          "question_text": "Na ile Twoja organizacja automatyzuje procesy rozwoju produktu z wykorzystaniem generatywnej Al?",
           "answer_options": {
             "A": "Brak automatyzacji procesów rozwoju produktu z Al",
             "B": "Podstawowa automatyzacja wybranych etapów rozwoju produktu",
@@ -330,10 +330,10 @@
             "D": "Al wspiera większość decyzji w kluczowych obszarach",
             "E": "Al zintegrowana we wszystkich procesach decyzyjnych organizacji"
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         },
         {
-          "question_text": "Czy organizacja wdraża narzędzia wspierające pracę zespołów AI?",
+          "question_text": "Czy organizacja wdraża narzędzia wspierające pracę zespołów Al?",
           "answer_options": {
             "A": "Brak narzędzi wspierających pracę zespołów Al",
             "B": "Podstawowe narzędzia, ale nie są powszechnie używane",
@@ -355,7 +355,7 @@
           "selected_answer": "B"
         },
         {
-          "question_text": "Czy organizacja zdefiniowała proces zarządzania cyklem życia dla oprogramowania AI?",
+          "question_text": "Czy organizacja zdefiniowała proces zarządzania cyklem życia dla oprogramowania Al?",
           "answer_options": {
             "A": "Brak zdefiniowanego procesu zarządzania cyklem życia oprogramowania",
             "B": "Proces częściowo zdefiniowany, ale niespójnie realizowany",
@@ -363,7 +363,7 @@
             "D": "Zdefiniowany proces zarządzania cyklem życia w większości projektów",
             "E": "Pełny proces zarządzania cyklem życia dla oprogramowania Al wdrożony we wszystkich projektach"
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
           "question_text": "Czy organizacja posiada przewodnik po procesie rozwoju produktu opartym o generatywną AI?",
@@ -391,7 +391,7 @@
             "D": "Strategia długoterminowa jest wdrożona w większości obszarów",
             "E": "W pełni wdrożona, długoterminowa strategia inwestycji w generatywną Al"
           },
-          "selected_answer": "C"
+          "selected_answer": "A"
         },
         {
           "question_text": "Czy strategia Al jest wdrożona w rozwój produktów?",
@@ -402,7 +402,7 @@
             "D": "Strategia Al wdrożona w większości produktów",
             "E": "Pełne wdrożenie strategii Al we wszystkich produktach organizacji"
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
           "question_text": "Czy Twoja organizacja określiła cele strategiczne dla generatywnej Al?",
@@ -413,7 +413,7 @@
             "D": "Cele strategiczne dla Al realizowane w większości obszarów",
             "E": "W pełni wdrożone i realizowane cele strategiczne dla generatywnej Al"
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
           "question_text": "Czy organizacja ocenia wpływ biznesowy i wykonalność rozwiązań generatywnej Al z wyprzedzeniem?",
@@ -424,7 +424,7 @@
             "D": "Regularna ocena dla większości projektów",
             "E": "W pełni systematyczna ocena wpływu biznesowego i wykonalności dla wszystkich rozwiązań Al"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy Twoja organizacja opracowała system monitorowania wyników wdrożenia AI?",
@@ -435,10 +435,10 @@
             "D": "System monitorowania wyników wdrożenia Al działa w większości obszarów",
             "E": "W pełni wdrożony, zaawansowany system monitorowania wyników Al"
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
-          "question_text": "Czy organizacja analizuje konkurencję pod względem ich zdolności do wdrożeń generatywnej AI?",
+          "question_text": "Czy organizacja analizuje konkurencję pod względem ich zdolności do wdrożeń generatywnej Al?",
           "answer_options": {
             "A": "Brak analiz konkurencji dotyczących Al",
             "B": "Sporadyczne analizy konkurencji dotyczące Al",
@@ -446,7 +446,7 @@
             "D": "Regularne analizy konkurencji pod kątem wdrożeń Al",
             "E": "W pełni zintegrowane analizy konkurencji dotyczące generatywnej Al we wszystkich strategicznych obszarach"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         }
       ]
     },
@@ -466,7 +466,7 @@
           "selected_answer": "B"
         },
         {
-          "question_text": "Czy Twoja organizacja przeznacza środki na rozwój kompetencji pracowników w zakresie generatywnej AI?",
+          "question_text": "Czy Twoja organizacja przeznacza środki na rozwój kompetencji pracowników w zakresie generatywnej Al?",
           "answer_options": {
             "A": "Brak środków na rozwój kompetencji pracowników w zakresie Al",
             "B": "Sporadyczne finansowanie szkoleń dla wybranych pracowników",
@@ -474,7 +474,7 @@
             "D": "Stałe finansowanie rozwoju kompetencji większości pracowników",
             "E": "Pełne finansowanie rozwoju kompetencji w zakresie Al dla wszystkich pracowników"
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
           "question_text": "Czy Twoja organizacja finansuje projekty pilotażowe i innowacyjne związane z generatywną AI?",
@@ -485,10 +485,10 @@
             "D": "Regularne finansowanie większości projektów pilotażowych",
             "E": "Pełne wsparcie finansowe dla wszystkich projektów pilotażowych i innowacyjnych związanych z Al"
           },
-          "selected_answer": "B"
+          "selected_answer": "C"
         },
         {
-          "question_text": "Czy organizacja alokuje środki na zewnętrzne konsultacje dotyczące generatywnej AI?",
+          "question_text": "Czy organizacja alokuje środki na zewnętrzne konsultacje dotyczące generatywnej Al?",
           "answer_options": {
             "A": "Brak alokacji środków na zewnętrzne konsultacje dotyczące Al",
             "B": "Sporadyczne alokowanie środków na konsultacje w wybranych projektach",
@@ -496,10 +496,10 @@
             "D": "Regularna alokacja środków na konsultacje w większości projektów",
             "E": "Pełna alokacja środków na zewnętrzne konsultacje we wszystkich strategicznych projektach"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
-          "question_text": "Czy organizacja priorytetyzuje projekty generujące wysoką wartość dodaną dzięki generatywnej AI?",
+          "question_text": "Czy organizacja priorytetyzuje projekty generujące wysoką wartość dodaną dzięki generatywnej Al?",
           "answer_options": {
             "A": "Brak priorytetyzacji projektów związanych z Al",
             "B": "Priorytetyzacja jedynie wybranych projektów",
@@ -507,7 +507,7 @@
             "D": "Regularna priorytetyzacja większości projektów związanych z Al",
             "E": "Pełna priorytetyzacja projektów Al o najwyższej wartości dodanej"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         }
       ]
     },
@@ -522,9 +522,9 @@
             "B": "Minimalne wykorzystanie Al w wybranych procesach",
             "C": "Częściowe wykorzystanie Al do automatyzacji procesów",
             "D": "Al wspiera większość procesów projektowania i wytwarzania",
-            "E": "Pełne wykorzystanie Al w automatyzacji procesów"
+            "E": "Pełne wykorzystanie Al w automatyzacji procesów projektowania i wytwarzania produktów"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy Twoja organizacja korzysta z generatywnej Al do personalizacji produktów?",
@@ -535,7 +535,7 @@
             "D": "Personalizacja większości produktów z wykorzystaniem Al",
             "E": "Pełna personalizacja produktów przy wsparciu Al"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy organizacja korzysta z generatywnej Al do generowania pomysłów związanych z produktami (np. analiza sentymentu, analiza opinii)?",
@@ -546,7 +546,7 @@
             "D": "Generowanie pomysłów w większości procesów rozwoju produktów",
             "E": "Pełne wykorzystanie Al do generowania pomysłów i analiz opinii dla produktów"
           },
-          "selected_answer": "A"
+          "selected_answer": "C"
         },
         {
           "question_text": "Czy Twoja organizacja wykorzystuje generatywną Al do wspomagania redukcji informacji (np. streszczenia tekstów)?",
@@ -557,10 +557,10 @@
             "D": "Al stosowana regularnie do redukcji informacji w większości projektów",
             "E": "Pełne wykorzystanie Al do redukcji informacji we wszystkich obszarach"
           },
-          "selected_answer": "B"
+          "selected_answer": "D"
         },
         {
-          "question_text": "Czy organizacja wspomaga ocenę koncepcji produktów przy użyciu generatywnej AI?",
+          "question_text": "Czy organizacja wspomaga ocenę koncepcji produktów przy użyciu generatywnej Al?",
           "answer_options": {
             "A": "Brak wspomagania oceny koncepcji przy użyciu Al",
             "B": "Sporadyczne wsparcie oceny koncepcji w wybranych projektach",
@@ -568,7 +568,7 @@
             "D": "Al wspiera ocenę koncepcji w większości projektów",
             "E": "Pełne wsparcie oceny koncepcji produktów z wykorzystaniem Al"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy Twoja organizacja wykorzystuje generatywną Al do skrócenia czasu testowania produktów?",
@@ -579,7 +579,7 @@
             "D": "Al stosowana regularnie do skracania czasu testowania produktów",
             "E": "Pełne wykorzystanie Al do maksymalnego skrócenia czasu testowania produktów"
           },
-          "selected_answer": "A"
+          "selected_answer": "B"
         },
         {
           "question_text": "Czy organizacja wspiera marketing produktowy z wykorzystaniem generatywnej Al (np. tworzenie reklam, słów kluczowych, filmów promocyjnych)?",
@@ -590,7 +590,7 @@
             "D": "Al wspiera marketing większości produktów",
             "E": "Pełne wykorzystanie Al do wspomagania marketingu produktowego (tworzenie reklam, kampanii, analiz)"
           },
-          "selected_answer": "B"
+          "selected_answer": "D"
         },
         {
           "question_text": "Czy Twoja organizacja wykorzystuje generatywną Al do doskonalenia systemów rekomendacji produktów?",
@@ -604,7 +604,7 @@
           "selected_answer": "B"
         },
         {
-          "question_text": "Czy organizacja doskonali działanie baz danych produktów z wykorzystaniem generatywnej AI?",
+          "question_text": "Czy organizacja doskonali działanie baz danych produktów z wykorzystaniem generatywnej Al?",
           "answer_options": {
             "A": "Brak doskonalenia baz danych produktów przy użyciu Al",
             "B": "Podstawowe wykorzystanie Al w wybranych obszarach",
@@ -626,7 +626,7 @@
           "selected_answer": "A"
         },
         {
-          "question_text": "Czy organizacja poszukuje nowych przypadków użycia rozwiązań generatywnej AI?",
+          "question_text": "Czy organizacja poszukuje nowych przypadków użycia rozwiązań generatywnej Al?",
           "answer_options": {
             "A": "Brak poszukiwań nowych przypadków użycia Al",
             "B": "Sporadyczne poszukiwania nowych przypadków użycia",
@@ -634,7 +634,7 @@
             "D": "Regularne poszukiwanie nowych przypadków użycia Al",
             "E": "Pełne zaangażowanie w poszukiwanie nowych przypadków użycia generatywnej Al we wszystkich obszarach"
           },
-          "selected_answer": "B"
+          "selected_answer": "D"
         }
       ]
     },
@@ -643,7 +643,7 @@
       "question_count": 10,
       "questions": [
         {
-          "question_text": "Czy Twoja organizacja przestrzega zasad etyki w projektowaniu generatywnej AI?",
+          "question_text": "Czy Twoja organizacja przestrzega zasad etyki w projektowaniu generatywnej Al?",
           "answer_options": {
             "A": "Brak uwzględnienia zasad etyki w projektowaniu Al",
             "B": "Sporadyczne uwzględnienie etyki w wybranych projektach",
@@ -651,7 +651,7 @@
             "D": "Większość projektów uwzględnia zasady etyki",
             "E": "W pełni uwzględnione zasady etyki we wszystkich projektach Al"
           },
-          "selected_answer": "D"
+          "selected_answer": "A"
         },
         {
           "question_text": "Czy Twoja organizacja zapewnia bezpieczeństwo i prywatność danych związanych z rozwojem produktów?",
@@ -673,7 +673,7 @@
             "D": "Większość danych posiada mechanizmy możliwości wyjaśnienia",
             "E": "Pełne zaufanie do danych i mechanizmy możliwości wyjaśnienia wdrożone we wszystkich procesach"
           },
-          "selected_answer": "C"
+          "selected_answer": "D"
         },
         {
           "question_text": "Czy organizacja wdraża standardy ochrony i mechanizmy dotyczące kopii zapasowych danych?",
@@ -684,7 +684,7 @@
             "D": "Większość obszarów objęta standardami ochrony i kopiami zapasowymi danych",
             "E": "W pełni wdrożone standardy ochrony i mechanizmy kopii zapasowych we wszystkich obszarach"
           },
-          "selected_answer": "D"
+          "selected_answer": "E"
         },
         {
           "question_text": "Czy Twoja organizacja przeciwdziała uprzedzeniom i niesprawiedliwości w algorytmach generatywnej Al?",
@@ -695,7 +695,7 @@
             "D": "Większość algorytmów jest weryfikowana pod kątem uprzedzeń",
             "E": "Pełna eliminacja uprzedzeń i niesprawiedliwości w algorytmach Al"
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
           "question_text": "Czy organizacja regularnie ocenia zgodność algorytmów generatywnej Al z regulacjami prawnymi?",
@@ -706,10 +706,10 @@
             "D": "Większość algorytmów jest regularnie weryfikowana pod kątem zgodności z regulacjami",
             "E": "W pełni wdrożone procedury regularnej oceny zgodności algorytmów Al z przepisami"
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
-          "question_text": "Czy Twoja organizacja tworzy systemy audytu decyzji podejmowanych przez generatywną AI?",
+          "question_text": "Czy Twoja organizacja tworzy systemy audytu decyzji podejmowanych przez generatywną Al?",
           "answer_options": {
             "A": "Brak systemów audytu decyzji podejmowanych przez Al",
             "B": "Podstawowe systemy audytu wprowadzane w wybranych projektach",
@@ -717,7 +717,7 @@
             "D": "Systemy audytu funkcjonują dla większości decyzji Al",
             "E": "W pełni wdrożone systemy audytu i odpowiedzialności za decyzje podejmowane przez Al"
           },
-          "selected_answer": "B"
+          "selected_answer": "A"
         },
         {
           "question_text": "Czy Twoja organizacja poszerza świadomość dotyczącą ochrony danych wśród pracowników?",
@@ -728,7 +728,7 @@
             "D": "Regularne szkolenia w zakresie ochrony danych w większości zespołów",
             "E": "Pełne programy edukacyjne dotyczące ochrony danych dla wszystkich pracowników"
           },
-          "selected_answer": "C"
+          "selected_answer": "D"
         },
         {
           "question_text": "Czy organizacja wykorzystuje technologie dotyczące cyberbezpieczeństwa?",

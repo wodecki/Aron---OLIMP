@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 from state import DocumentState
+from utils import extract_organization_letter
 
 # Load environment variables
 load_dotenv()
@@ -83,9 +84,11 @@ def evaluation(state: DocumentState) -> DocumentState:
         gaps_context = json.dumps(state.get("gaps", {}), ensure_ascii=False, indent=2)
         
         # Load supplementary context if available
+        org_letter = extract_organization_letter()
         supplementary_context = ""
+        supplementary_file = f"./data/process/{org_letter}_1.json"
         try:
-            with open("./data/process/A_1.json", "r", encoding="utf-8") as f:
+            with open(supplementary_file, "r", encoding="utf-8") as f:
                 supplementary_data = json.load(f)
                 supplementary_context = json.dumps(supplementary_data, ensure_ascii=False, indent=2)
         except FileNotFoundError:
@@ -181,7 +184,7 @@ def evaluation(state: DocumentState) -> DocumentState:
             print(f"❌ Recommendations need revision (iteration {state['evaluation_iterations']}/{MAX_EVALUATION_ITERATIONS})")
         
         # Save detailed evaluation to file
-        evaluation_filename = f"A_evaluation_iter_{state['evaluation_iterations']}.md"
+        evaluation_filename = f"{org_letter}_evaluation_iter_{state['evaluation_iterations']}.md"
         reports_dir = "./data/reports"
         os.makedirs(reports_dir, exist_ok=True)
         

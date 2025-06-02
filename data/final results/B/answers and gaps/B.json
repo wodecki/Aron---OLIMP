@@ -16,7 +16,7 @@
               "D": "Zespół międzyfunkcyjny jest zaangażowany w cały proces rozwoju produktu, ale współpraca nie jest jeszcze optymalna.",
               "E": "Zespół międzyfunkcyjny jest w pełni zintegrowany i intensywnie zaangażowany na wszystkich etapach rozwoju produktu."
             },
-            "selected_answer": "D"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy wszyscy interesariusze są zaangażowani w zespół projektowy, nawet gdy są rozproszeni globalnie?",
@@ -24,7 +24,7 @@
               "A": "Interesariusze nie są zaangażowani w zespół projektowy.",
               "B": "Niektórzy interesariusze są zaangażowani, ale tylko lokalnie.",
               "C": "Większość interesariuszy jest zaangażowana, ale nie zawsze, szczególnie gdy są rozproszeni globalnie.",
-              "D": "Interesariusze są angażowani, nawet gdy są rozproszeni globalnie, ale współpraca wymaga jeszcze usprawnień.",
+              "D": "Interesariusze są zaangażowani, nawet gdy są rozproszeni globalnie, ale współpraca wymaga jeszcze usprawnień.",
               "E": "Wszyscy interesariusze są w pełni zaangażowani w zespół projektowy, niezależnie od lokalizacji geograficznej."
             },
             "selected_answer": "C"
@@ -38,7 +38,7 @@
               "D": "Role i obowiązki są dobrze określone dla większości członków zespołu.",
               "E": "Role i obowiązki są w pełni jasno określone, dobrze zrozumiane i przestrzegane przez wszystkich członków zespołu."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy w projekcie zapewniona jest wysoka elastyczność w wykonywaniu zadań?",
@@ -49,7 +49,7 @@
               "D": "Elastyczność w wykonywaniu zadań jest zapewniona, ale nie zawsze jest maksymalnie wykorzystywana.",
               "E": "Elastyczność w wykonywaniu zadań jest wysoka i wspiera efektywność zespołu na wszystkich etapach projektu."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy kierownicy produktu mają techniczne zaplecze i są w pełni zaangażowani w projekt?",
@@ -60,7 +60,7 @@
               "D": "Większość kierowników produktu ma odpowiednie techniczne zaplecze i jest zaangażowana w projekt.",
               "E": "Wszyscy kierownicy produktu mają techniczne zaplecze, potwierdzone doświadczeniem i są w pełni zaangażowani w rozwój."
             },
-            "selected_answer": "D"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy klient jest w pełni zaangażowany w rozwój produktu?",
@@ -82,7 +82,7 @@
               "D": "Doświadczeni projektanci są angażowani na wczesnych etapach we wszystkich projektach, ale ich udział nie zawsze jest optymalny.",
               "E": "Doświadczeni projektanci są zawsze angażowani od najwcześniejszych etapów projektów i ich wkład jest kluczowy dla sukcesu projektu."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           }
         ]
       },
@@ -99,7 +99,7 @@
               "D": "Programy są szeroko dostępne i regularnie stosowane.",
               "E": "Programy są systematyczne, dobrze zaplanowane i obejmują wszystkich pracowników."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy oferowane są indywidualne korepetycje w ramach rozwoju umiejętności?",
@@ -110,7 +110,7 @@
               "D": "Korepetycje są dobrze rozwinięte, ale nie zawsze dostępne dla wszystkich pracowników.",
               "E": "Korepetycje są standardem, indywidualizowane i dostępne dla wszystkich pracowników."
             },
-            "selected_answer": "B"
+            "selected_answer": "E"
           },
           {
             "question_text": "Czy używane są KPI do oceny wyników szkolenia?",
@@ -121,7 +121,7 @@
               "D": "KPI są stosowane systematycznie i obejmują większość programów szkoleniowych.",
               "E": "KPI są używane kompleksowo do oceny wszystkich aspektów szkolenia i regularnie aktualizowane."
             },
-            "selected_answer": "B"
+            "selected_answer": "E"
           }
         ]
       },
@@ -138,7 +138,7 @@
               "D": "Model jest przestrzegany i dokumentowany przez większość zespołów.",
               "E": "Model jest standardem, przestrzegany i dokumentowany w każdym projekcie."
             },
-            "selected_answer": "E"
+            "selected_answer": "D"
           },
           {
             "question_text": "W jakim stopniu współpraca jest częścią procesu rozwoju produktu?",
@@ -149,7 +149,7 @@
               "D": "Współpraca obejmuje prawie wszystkie etapy rozwoju produktu.",
               "E": "Współpraca jest integralną częścią procesu, obejmującą wszystkie etapy."
             },
-            "selected_answer": "E"
+            "selected_answer": "B"
           },
           {
             "question_text": "Jak skutecznie stosowany jest zestaw KPI do pomiaru wydajności rozwoju produktu?",
@@ -160,7 +160,7 @@
               "D": "Zestaw KPI jest stosowany systematycznie w większości projektów.",
               "E": "Zestaw KPI jest stosowany we wszystkich projektach i fazach rozwoju produktu."
             },
-            "selected_answer": "C"
+            "selected_answer": "E"
           },
           {
             "question_text": "Na jakim poziomie frontloading jest wdrażany w procesie rozwoju produktu?",
@@ -182,7 +182,7 @@
               "D": "Inicjatywy ciągłego doskonalenia są regularnie podejmowane i mają realny wpływ na proces.",
               "E": "Inicjatywy ciągłego doskonalenia są standardem i mają duży wpływ na efektywność procesów."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy organizacja projektuje różne rozwiązania, a gorsze rozwiązania eliminowane są w miarę pojawiania się nowych informacji?",
@@ -193,7 +193,7 @@
               "D": "Różne rozwiązania są projektowane i gorsze rozwiązania są regularnie eliminowane.",
               "E": "Różne rozwiązania są projektowane w każdym projekcie, a gorsze opcje są regularnie i skutecznie eliminowane."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Na ile proces rozwoju produktu koncentruje się na wartości dla klienta?",
@@ -204,7 +204,7 @@
               "D": "Proces konsekwentnie koncentruje się na wartości dla klienta.",
               "E": "Proces w pełni koncentruje się na maksymalizacji wartości dla klienta."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "W jaki sposób wdrażany jest proces analizy konkurencji?",
@@ -215,7 +215,7 @@
               "D": "Proces analizy konkurencji jest skutecznie wdrażany we wszystkich projektach.",
               "E": "Proces analizy konkurencji jest kluczowym elementem rozwoju produktu i wdrażany w każdym projekcie."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           }
         ]
       },
@@ -243,7 +243,7 @@
               "D": "Proces produkcji komponentów i półproduktów jest kluczowym elementem w każdym projekcie.",
               "E": "Proces produkcji komponentów i półproduktów jest priorytetem i uwzględniany w każdym projekcie."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Na ile proces montażu komponentów jest brany pod uwagę w rozwoju produktu?",
@@ -254,7 +254,7 @@
               "D": "Proces montażu komponentów jest zoptymalizowany i uwzględniany na wszystkich etapach.",
               "E": "Proces montażu komponentów jest kluczowym elementem rozwoju produktu i jest optymalizowany we wszystkich projektach."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Jakie znaczenie ma proces testowania i eksperymentowania w rozwoju produktu?",
@@ -287,7 +287,7 @@
               "D": "Proces dostawy i dystrybucji jest skutecznie uwzględniany w każdym projekcie.",
               "E": "Proces dostawy i dystrybucji jest integralną częścią każdego procesu decyzyjnego."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Na ile proces użytkowania przez klienta jest uwzględniany w rozwoju produktu?",
@@ -298,7 +298,7 @@
               "D": "Proces użytkowania przez klienta jest regularnie monitorowany i uwzględniany na wszystkich etapach.",
               "E": "Proces użytkowania przez klienta jest monitorowany na bieżąco i uwzględniany w pełni w decyzjach projektowych."
             },
-            "selected_answer": "C"
+            "selected_answer": "E"
           },
           {
             "question_text": "W jaki sposób uwzględniany jest proces konserwacji i usług posprzedażowych?",
@@ -309,7 +309,7 @@
               "D": "Proces konserwacji i usług posprzedażowych jest kluczowy i zawsze brany pod uwagę.",
               "E": "Proces konserwacji i usług posprzedażowych jest priorytetem i brany pod uwagę na wszystkich etapach rozwoju."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Na jakim poziomie uwzględniany jest proces demontażu, recyklingu i utylizacji?",
@@ -331,7 +331,7 @@
               "D": "Proces kontroli, ponownego użycia, aktualizacji i odnowienia jest uwzględniany w większości projektów.",
               "E": "Proces kontroli, ponownego użycia, aktualizacji i odnowienia jest w pełni uwzględniany i zintegrowany z rozwojem produktu."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Jakie znaczenie ma końcowy koszt produktu / cena produktu w procesie decyzyjnym?",
@@ -342,7 +342,7 @@
               "D": "Końcowy koszt produktu jest kluczowym elementem decyzji we wszystkich projektach.",
               "E": "Końcowy koszt produktu / cena produktu jest priorytetem w każdej decyzji projektowej."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "W jakim stopniu koszty rozwoju / ROI są uwzględniane w procesie decyzyjnym?",
@@ -375,7 +375,7 @@
               "D": "TTM i termin dostawy są kluczowymi czynnikami w każdej decyzji projektowej.",
               "E": "TTM i termin dostawy są najważniejszymi kryteriami w każdej decyzji projektowej."
             },
-            "selected_answer": "C"
+            "selected_answer": "E"
           },
           {
             "question_text": "Jak liczba różnych produktów wpływa na decyzje projektowe?",
@@ -386,7 +386,7 @@
               "D": "Liczba różnych produktów jest uwzględniana w większości projektów i ma bezpośredni wpływ na decyzje.",
               "E": "Liczba różnych produktów jest kluczowym czynnikiem w każdej decyzji i wpływa na wybory projektowe."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "W jakim stopniu poziom dostosowania produktu jest uwzględniany w procesie decyzyjnym?",
@@ -397,7 +397,7 @@
               "D": "Poziom dostosowania produktu jest monitorowany i uwzględniany w każdym projekcie.",
               "E": "Poziom dostosowania produktu jest w pełni uwzględniany w każdym projekcie i jest priorytetem w decyzjach."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Jak uwzględniany jest poziom innowacyjności w podejmowanych decyzjach?",
@@ -408,7 +408,7 @@
               "D": "Poziom innowacyjności jest systematycznie monitorowany i uwzględniany we wszystkich projektach.",
               "E": "Poziom innowacyjności jest monitorowany i ma największy wpływ na każdą decyzję."
             },
-            "selected_answer": "C"
+            "selected_answer": "E"
           },
           {
             "question_text": "W jaki sposób wizerunek marki wpływa na podejmowane decyzje?",
@@ -419,7 +419,7 @@
               "D": "Wizerunek marki jest kluczowym czynnikiem w podejmowaniu decyzji projektowych.",
               "E": "Wizerunek marki jest priorytetem w każdej decyzji projektowej i jest ściśle monitorowany."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Jakie znaczenie ma wydajność funkcjonalna (np. produktywność, prędkość, dokładność, łatwość konserwacji) w decyzjach projektowych?",
@@ -430,7 +430,7 @@
               "D": "Wydajność funkcjonalna jest regularnie monitorowana i uwzględniana w każdej decyzji.",
               "E": "Wydajność funkcjonalna jest priorytetem i uwzględniana we wszystkich decyzjach projektowych."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Jak uwzględniana jest wydajność jakościowa (np. solidność, niezawodność, trwałość) w decyzjach projektowych?",
@@ -441,7 +441,7 @@
               "D": "Wydajność jakościowa jest kluczowa i uwzględniana we wszystkich decyzjach.",
               "E": "Wydajność jakościowa jest kluczowa i jest najważniejszym elementem każdej decyzji projektowej."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "W jaki sposób zgodność z przepisami i normami wpływa na decyzje?",
@@ -452,7 +452,7 @@
               "D": "Zgodność z przepisami jest regularnie monitorowana i uwzględniana w każdej decyzji.",
               "E": "Zgodność z przepisami i normami jest integralną częścią każdej decyzji i jest regularnie monitorowana."
             },
-            "selected_answer": "D"
+            "selected_answer": "C"
           },
           {
             "question_text": "Jakie inne czynniki, takie jak zrównoważony rozwój środowiskowy, estetyka czy aspekty społeczne, są brane pod uwagę w procesie decyzyjnym?",
@@ -463,7 +463,7 @@
               "D": "Inne czynniki, takie jak zrównoważony rozwój, są regularnie uwzględniane i mają duży wpływ na decyzje.",
               "E": "Inne czynniki, takie jak zrównoważony rozwój, są kluczowe i priorytetowe w procesie decyzyjnym."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           }
         ]
       },
@@ -480,7 +480,7 @@
               "D": "Wiedza z poprzednich projektów jest systematycznie wykorzystywana na etapie koncepcyjnym we wszystkich projektach.",
               "E": "Wiedza z poprzednich projektów jest w pełni zintegrowana z każdym etapem koncepcyjnym i jest priorytetem."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy wiedza z poprzednich projektów jest odzyskiwana podczas studium wykonalności?",
@@ -491,7 +491,7 @@
               "D": "Wiedza z poprzednich projektów jest uwzględniana podczas studium wykonalności w każdym projekcie.",
               "E": "Wiedza z poprzednich projektów jest wykorzystywana w każdym projekcie i ma kluczowy wpływ na studium wykonalności."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy wiedza z poprzednich projektów jest odzyskiwana w trakcie szczegółowego projektowania produktu i jego komponentów?",
@@ -513,7 +513,7 @@
               "D": "Wiedza z poprzednich projektów jest w pełni odzyskiwana podczas testowania i prototypowania.",
               "E": "Odzyskiwanie wiedzy z poprzednich projektów jest integralną częścią testowania, prototypowania i eksperymentowania."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy wiedza z poprzednich projektów jest odzyskiwana podczas końcowej weryfikacji projektu?",
@@ -524,7 +524,7 @@
               "D": "Wiedza z poprzednich projektów jest odzyskiwana podczas końcowej weryfikacji projektu w większości przypadków.",
               "E": "Odzyskiwanie wiedzy z poprzednich projektów jest priorytetem w procesie końcowej weryfikacji projektu."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy istnieje formalny plan zarządzania wiedzą wspierający proces rozwoju produktu?",
@@ -535,7 +535,7 @@
               "D": "Formalny plan zarządzania wiedzą jest w pełni wdrażany i wspiera rozwój produktu we wszystkich projektach.",
               "E": "Formalny plan zarządzania wiedzą jest w pełni wdrażany i systematycznie stosowany we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "W jakim stopniu firma korzysta z zasobów wiedzy pochodzących z poprzednich projektów?",
@@ -546,7 +546,7 @@
               "D": "Firma regularnie korzysta z zasobów wiedzy z poprzednich projektów i stosuje je w nowych projektach.",
               "E": "Firma w pełni korzysta z zasobów wiedzy z poprzednich projektów i regularnie aktualizuje proces KM."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy zasady projektowania zdefiniowane przez firmę są stale przeglądane i aktualizowane?",
@@ -557,7 +557,7 @@
               "D": "Zasady projektowania zdefiniowane przez firmę są regularnie aktualizowane i wspierają proces KM.",
               "E": "Zasady projektowania zdefiniowane przez firmę są stale aktualizowane i w pełni wspierają proces KM."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy zasady projektowania zdefiniowane przez zewnętrzne podmioty (np. klientów, dostawców) są stale przeglądane i aktualizowane?",
@@ -579,7 +579,7 @@
               "D": "Podręczniki i standardy są regularnie aktualizowane i obejmują większość projektów.",
               "E": "Podręczniki i standardy są stale aktualizowane i w pełni wspierają wszystkie projekty."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające końcowe koszty produktu?",
@@ -590,7 +590,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające końcowe koszty produktu, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających końcowe koszty produktu, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające koszty rozwoju i ROI?",
@@ -601,7 +601,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające koszty rozwoju i ROI, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających koszty rozwoju i ROI, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające koszty użytkowania i cyklu życia (np. konserwacja, recykling)?",
@@ -612,7 +612,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające koszty użytkowania i cyklu życia, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających koszty użytkowania i cyklu życia, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające czas wprowadzenia produktu na rynek i termin dostawy?",
@@ -623,7 +623,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające czas wprowadzenia produktu na rynek i termin dostawy, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających czas wprowadzenia produktu na rynek i termin dostawy, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające liczbę różnych produktów w ofercie firmy?",
@@ -634,7 +634,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające liczbę różnych produktów w ofercie, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających liczbę różnych produktów w ofercie, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające poziom dostosowania produktu do potrzeb klientów?",
@@ -656,7 +656,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające poziom innowacyjności produktu, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających poziom innowacyjności produktu, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające wizerunek marki?",
@@ -667,7 +667,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające wizerunek marki, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających wizerunek marki, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające wydajność funkcjonalną produktów (np. produktywność, prędkość, dokładność)?",
@@ -678,7 +678,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające wydajność funkcjonalną produktów, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających wydajność funkcjonalną produktów, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające wydajność jakościową produktów (np. solidność, niezawodność)?",
@@ -689,7 +689,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające wydajność jakościową, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających wydajność jakościową, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające zgodność z przepisami i normami prawnymi?",
@@ -700,7 +700,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające zgodność z przepisami i normami które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających zgodność z przepisami i normami, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy istnieją główne źródła wiedzy w procesie rozwoju produktu uwzględniające inne aspekty (np. zrównoważony rozwój, estetyka, aspekty moralne)?",
@@ -711,7 +711,7 @@
               "D": "Istnieją dobrze zdefiniowane wytyczne uwzględniające inne aspekty, takie jak zrównoważony rozwój, które są konsekwentnie stosowane.",
               "E": "Organizacja w pełni opiera się na formalnych źródłach wiedzy uwzględniających inne aspekty, takie jak zrównoważony rozwój, które są stosowane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           }
         ]
       },
@@ -728,7 +728,7 @@
               "D": "Werbalna komunikacja z kolegami jest skutecznie wykorzystywana do dzielenia się wiedzą we wszystkich projektach.",
               "E": "Werbalna komunikacja z kolegami jest priorytetem i wykorzystywana w pełni do dzielenia się wiedzą na wszystkich etapach projektów."
             },
-            "selected_answer": "D"
+            "selected_answer": "B"
           },
           {
             "question_text": "Jak często dokumenty z wnioskami wyciągniętymi z doświadczeń są tworzone i wykorzystywane?",
@@ -739,7 +739,7 @@
               "D": "Dokumenty z wnioskami wyciągniętymi z doświadczeń są systematycznie tworzone i wykorzystywane w większości projektów.",
               "E": "Dokumenty z wnioskami wyciągniętymi z doświadczeń są w pełni zintegrowane z procesem i regularnie wykorzystywane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Na ile specyfikacje projektowe są używane w procesach zarządzania wiedzą?",
@@ -750,7 +750,7 @@
               "D": "Specyfikacje projektowe są w pełni wykorzystywane do udostępniania wiedzy we wszystkich projektach.",
               "E": "Specyfikacje projektowe są w pełni i systematycznie wykorzystywane do dzielenia się wiedzą w każdym projekcie."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Jak skutecznie kwestionariusze i listy kontrolne wspierają zarządzanie wiedzą?",
@@ -761,7 +761,7 @@
               "D": "Kwestionariusze i listy kontrolne są skutecznie stosowane i mają duży wpływ na zarządzanie wiedzą.",
               "E": "Kwestionariusze i listy kontrolne są priorytetem i skutecznie wspierają zarządzanie wiedzą na każdym etapie."
             },
-            "selected_answer": "B"
+            "selected_answer": "E"
           },
           {
             "question_text": "W jakim stopniu pokoje do obrad, plakaty i zarządzanie wizualne są wykorzystywane do dzielenia się wiedzą?",
@@ -772,7 +772,7 @@
               "D": "Pokoje do obrad, plakaty i zarządzanie wizualne są w pełni wykorzystywane do dzielenia się wiedzą.",
               "E": "Pokoje do obrad, plakaty i zarządzanie wizualne są kluczowym elementem procesu dzielenia się wiedzą i są w pełni wykorzystywane."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Jak często wspólne foldery sieciowe są używane do przechowywania i udostępniania wiedzy?",
@@ -783,7 +783,7 @@
               "D": "Wspólne foldery sieciowe są regularnie wykorzystywane i wspierają proces zarządzania wiedzą.",
               "E": "Wspólne foldery sieciowe są priorytetem w przechowywaniu i udostępnianiu wiedzy, regularnie aktualizowane i wykorzystywane."
             },
-            "selected_answer": "D"
+            "selected_answer": "E"
           },
           {
             "question_text": "Na ile intranet wspiera proces zarządzania wiedzą?",
@@ -794,7 +794,7 @@
               "D": "Intranet jest skutecznie wykorzystywany do wspierania zarządzania wiedzą we wszystkich projektach.",
               "E": "Intranet jest integralnym narzędziem wspierającym zarządzanie wiedzą i jest wykorzystywany we wszystkich projektach."
             },
-            "selected_answer": "D"
+            "selected_answer": "E"
           },
           {
             "question_text": "Jak wykorzystywane są strony internetowe do pracy nad wspólnymi projektami (np. Wiki) w zarządzaniu wiedzą?",
@@ -805,7 +805,7 @@
               "D": "Strony internetowe do pracy nad wspólnymi projektami są skutecznie wykorzystywane do zarządzania wiedzą.",
               "E": "Strony internetowe do pracy nad wspólnymi projektami są w pełni zintegrowane z procesem zarządzania wiedzą i wspierają projekty na wszystkich etapach."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Jak wykorzystywane są blogi, fora i tablice ogłoszeń w zarządzaniu wiedzą?",
@@ -816,7 +816,7 @@
               "D": "Blogi, fora i tablice ogłoszeń są skutecznie wykorzystywane do zarządzania wiedzą.",
               "E": "Blogi, fora i tablice ogłoszeń są w pełni zintegrowane z procesem zarządzania wiedzą i wspierają projekty na wszystkich etapach."
             },
-            "selected_answer": "D"
+            "selected_answer": "E"
           },
           {
             "question_text": "W jaki sposób systemy PDM/PLM wspierają zarządzanie wiedzą?",
@@ -827,7 +827,7 @@
               "D": "Systemy PDM/PLM są w pełni zintegrowane z procesem zarządzania wiedzą we wszystkich projektach.",
               "E": "Systemy PDM/PLM są w pełni wdrożone i wspierają zarządzanie wiedzą na każdym etapie rozwoju produktu."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Jakie korzyści wynikają z zastosowania oprogramowania KBE i automatyzacji projektowania w zarządzaniu wiedzą?",
@@ -838,7 +838,7 @@
               "D": "Oprogramowanie KBE i automatyzacja projektowania są skutecznie wykorzystywane do zarządzania wiedzą w większości projektów.",
               "E": "Oprogramowanie KBE i automatyzacja projektowania są integralną częścią zarządzania wiedzą i są wykorzystywane we wszystkich projektach."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           }
         ]
       },
@@ -855,7 +855,7 @@
               "D": "Zasady modularyzacji i standaryzacji części są skutecznie stosowane we wszystkich projektach.",
               "E": "Zasady modularyzacji i standaryzacji części są priorytetem i stosowane we wszystkich projektach na każdym etapie."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Na ile projektowanie dla X (DFX) jest stosowane w zakresie wydajności funkcjonalnej (np. projektowanie dla produkcji, dla montażu)?",
@@ -866,7 +866,7 @@
               "D": "Projektowanie dla X (DFX) jest kluczowym elementem w projektach w zakresie wydajności funkcjonalnej.",
               "E": "Projektowanie dla X (DFX) jest integralną częścią każdego projektu i w pełni wspiera wydajność funkcjonalną."
             },
-            "selected_answer": "D"
+            "selected_answer": "C"
           },
           {
             "question_text": "Jak projektowanie dla X (DFX) wspiera wydajność jakościową produktów (np. projektowanie dla Six Sigma, dla utrzymania ruchu)?",
@@ -877,7 +877,7 @@
               "D": "Projektowanie dla X (DFX) w pełni wspiera wydajność jakościową produktów.",
               "E": "Projektowanie dla X (DFX) jest priorytetem i wspiera wydajność jakościową produktów w pełnym zakresie."
             },
-            "selected_answer": "D"
+            "selected_answer": "C"
           },
           {
             "question_text": "W jakim zakresie projektowanie dla X (DFX) uwzględnia inne czynniki odczuwalne przez klientów, takie jak estetyka czy eko-projektowanie?",
@@ -888,7 +888,7 @@
               "D": "Projektowanie dla X (DFX) uwzględnia inne czynniki, takie jak estetyka czy eko-projektowanie, w większości projektów.",
               "E": "Projektowanie dla X (DFX) uwzględnia wszystkie czynniki odczuwalne przez klientów, takie jak estetyka i eko-projektowanie, i jest kluczowe w każdym projekcie."
             },
-            "selected_answer": "D"
+            "selected_answer": "C"
           },
           {
             "question_text": "Jak efektywnie stosowane jest projektowanie pod kątem kosztów (DTC) i zarządzanie kosztami docelowymi (TCM)?",
@@ -899,7 +899,7 @@
               "D": "Projektowanie pod kątem kosztów (DTC) i zarządzanie kosztami docelowymi (TCM) są skutecznie stosowane we wszystkich projektach.",
               "E": "Projektowanie pod kątem kosztów (DTC) i zarządzanie kosztami docelowymi (TCM) są integralną częścią każdego projektu i mają kluczowy wpływ na koszty."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Na ile analiza kosztów cyklu życia (LCC) i całkowity koszt posiadania (TCO) są uwzględniane w procesie projektowania?",
@@ -910,7 +910,7 @@
               "D": "Analiza kosztów cyklu życia (LCC) i całkowity koszt posiadania (TCO) są w pełni uwzględniane w procesie projektowania.",
               "E": "Analiza kosztów cyklu życia (LCC) i całkowity koszt posiadania (TCO) są w pełni uwzględniane na każdym etapie projektowania."
             },
-            "selected_answer": "E"
+            "selected_answer": "B"
           },
           {
             "question_text": "Jak skutecznie przeprowadzana jest analiza i inżynieria cyklu życia (LCA&E)?",
@@ -921,7 +921,7 @@
               "D": "Analiza i inżynieria cyklu życia (LCA&E) są skutecznie przeprowadzane we wszystkich projektach.",
               "E": "Analiza i inżynieria cyklu życia (LCA&E) są priorytetem w każdym projekcie i są systematycznie przeprowadzane."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Na ile analiza wartości i inżynieria wartości (VA&E) wspierają proces projektowania?",
@@ -943,7 +943,7 @@
               "D": "Funkcje jakości (QFD) są regularnie wdrażane w każdym projekcie i wspierają cały proces rozwoju.",
               "E": "Funkcje jakości (QFD) są w pełni wdrażane na każdym etapie rozwoju produktów i są integralną częścią procesu."
             },
-            "selected_answer": "E"
+            "selected_answer": "C"
           },
           {
             "question_text": "W jakim stopniu analiza ryzyka i awarii (FMEA/FMECA) wspiera proces rozwoju produktów?",
@@ -954,7 +954,7 @@
               "D": "Analiza ryzyka i awarii (FMEA/FMECA) jest stosowana systematycznie i ma duży wpływ na rozwój produktów.",
               "E": "Analiza ryzyka i awarii (FMEA/FMECA) jest stosowana we wszystkich projektach i ma kluczowy wpływ na decyzje projektowe."
             },
-            "selected_answer": "E"
+            "selected_answer": "D"
           },
           {
             "question_text": "Na ile metody systematycznej innowacji, takie jak TRIZ, są stosowane w procesie projektowania?",
@@ -982,7 +982,7 @@
               "D": "Automatyzacja biura jest skutecznie wykorzystywana do wspierania procesu rozwoju produktu we wszystkich projektach.",
               "E": "Automatyzacja biura jest priorytetem i w pełni wspiera proces rozwoju produktu w każdym projekcie."
             },
-            "selected_answer": "D"
+            "selected_answer": "C"
           },
           {
             "question_text": "Na ile systemy CAD 2D są stosowane w procesie projektowania?",
@@ -1004,7 +1004,7 @@
               "D": "Systemy CAD 3D są skutecznie wykorzystywane i wspierają rozwój produktów we wszystkich projektach.",
               "E": "Systemy CAD 3D są priorytetem i wspierają rozwój produktów na każdym etapie."
             },
-            "selected_answer": "C"
+            "selected_answer": "E"
           },
           {
             "question_text": "W jakim stopniu cyfrowe modele (DMU) wspierają rozwój produktów?",
@@ -1015,7 +1015,7 @@
               "D": "Cyfrowe modele (DMU) są stosowane we wszystkich projektach i mają duży wpływ na rozwój produktów.",
               "E": "Cyfrowe modele (DMU) są integralną częścią każdego projektu i w pełni wspierają rozwój produktów."
             },
-            "selected_answer": "B"
+            "selected_answer": "E"
           },
           {
             "question_text": "W jakim stopniu komputerowe wspomaganie stylizacji (CAS) jest wykorzystywane w projektach rozwoju produktów?",
@@ -1037,7 +1037,7 @@
               "D": "Komputerowe wspomaganie inżynierii (CAE) jest w pełni wykorzystywane we wszystkich projektach.",
               "E": "Komputerowe wspomaganie inżynierii (CAE) jest w pełni zintegrowane z każdym projektem i wspiera cały proces rozwoju."
             },
-            "selected_answer": "C"
+            "selected_answer": "E"
           },
           {
             "question_text": "W jakim stopniu metoda analizy elementów skończonych (FEA/FEM) jest wykorzystywana w procesie projektowania?",
@@ -1048,7 +1048,7 @@
               "D": "Metoda analizy elementów skończonych (FEA/FEM) jest skutecznie stosowana we wszystkich projektach.",
               "E": "Metoda analizy elementów skończonych (FEA/FEM) jest priorytetem i stosowana w każdym projekcie."
             },
-            "selected_answer": "B"
+            "selected_answer": "E"
           },
           {
             "question_text": "W jakim stopniu obliczeniowa dynamika płynów (CFD) jest stosowana w projektach?",
@@ -1070,7 +1070,7 @@
               "D": "KBE i automatyzacja projektowania są skutecznie wykorzystywane w większości projektów.",
               "E": "KBE i automatyzacja projektowania są priorytetem i są stosowane w pełnym zakresie w każdym projekcie."
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Na ile komputerowe wspomaganie produkcji (CAM) jest używane w procesie wytwarzania?",
@@ -1092,7 +1092,7 @@
               "D": "Komputerowe planowanie procesów (CAPP) jest w pełni stosowane w procesie rozwoju produktu.",
               "E": "Komputerowe planowanie procesów (CAPP) jest integralną częścią każdego procesu rozwoju produktu."
             },
-            "selected_answer": "D"
+            "selected_answer": "C"
           },
           {
             "question_text": "Na ile symulacja zdarzeń dyskretnych (DES) wspiera rozwój produktu?",
@@ -1103,7 +1103,7 @@
               "D": "Symulacja zdarzeń dyskretnych (DES) jest stosowana we wszystkich projektach i wspiera procesy rozwoju produktów.",
               "E": "Symulacja zdarzeń dyskretnych (DES) jest priorytetem i w pełni wspiera wszystkie procesy rozwoju produktów."
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "W jakim stopniu wykorzystywane są rzeczywistość wirtualna (VR) i rozszerzona (AR) w rozwoju produktu?",
@@ -1125,7 +1125,7 @@
               "D": "Systemy PDM/PLM są w pełni stosowane we wszystkich projektach i wspierają zarządzanie danymi produktu.",
               "E": "Systemy PDM/PLM są w pełni stosowane we wszystkich projektach i są kluczowym narzędziem zarządzania danymi produktu."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Jakie korzyści przynoszą systemy zarządzania dokumentami (DMS) w projektach rozwoju produktów?",
@@ -1136,7 +1136,7 @@
               "D": "Systemy zarządzania dokumentami (DMS) są w pełni stosowane we wszystkich projektach.",
               "E": "Systemy zarządzania dokumentami (DMS) są integralną częścią każdego projektu i w pełni wspierają zarządzanie dokumentacją."
             },
-            "selected_answer": "D"
+            "selected_answer": "C"
           },
           {
             "question_text": "Na ile system zarządzania przepływem pracy (WMS) wspiera zarządzanie projektami rozwoju produktów?",
@@ -1158,7 +1158,7 @@
               "D": "Planowanie zasobów przedsiębiorstwa (ERP) jest stosowane we wszystkich projektach i wspiera procesy rozwoju produktów.",
               "E": "Planowanie zasobów przedsiębiorstwa (ERP) jest kluczowym narzędziem wspierającym procesy rozwoju produktów i jest stosowane w pełnym zakresie."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Jak zarządzanie łańcuchem dostaw (SCM) wspiera rozwój produktu?",
@@ -1169,7 +1169,7 @@
               "D": "Zarządzanie łańcuchem dostaw (SCM) wspiera rozwój produktu we wszystkich projektach.",
               "E": "Zarządzanie łańcuchem dostaw (SCM) jest integralną częścią każdego projektu i w pełni wspiera procesy rozwojowe."
             },
-            "selected_answer": "D"
+            "selected_answer": "B"
           },
           {
             "question_text": "W jakim zakresie systemy zarządzania relacjami z klientami (CRM) wpływają na rozwój produktu?",
@@ -1180,7 +1180,7 @@
               "D": "Systemy zarządzania relacjami z klientami (CRM) są w pełni wykorzystywane we wszystkich projektach.",
               "E": "Systemy zarządzania relacjami z klientami (CRM) są kluczowe dla rozwoju produktów i są stosowane w pełnym zakresie."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Jak systemy zarządzania relacjami z dostawcami (SRM) wspierają proces rozwoju produktów?",
@@ -1202,7 +1202,7 @@
               "D": "Skomputeryzowany system zarządzania konserwacją (CMMS) jest stosowany we wszystkich projektach.",
               "E": "Skomputeryzowany system zarządzania konserwacją (CMMS) jest integralną częścią każdego projektu i wspiera wszystkie procesy rozwoju produktów."
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "W jakim stopniu oprogramowanie do analizy cyklu życia (LCA) wspiera rozwój produktu?",
@@ -1224,7 +1224,7 @@
               "D": "Systemy zarządzania projektami oprogramowania są w pełni wykorzystywane we wszystkich projektach.",
               "E": "Systemy zarządzania projektami oprogramowania są kluczowe dla rozwoju produktów i są stosowane w pełnym zakresie."
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           }
         ]
       }
@@ -1239,7 +1239,7 @@
         "question_count": 10,
         "questions": [
           {
-            "question_text": "Czy Twoja organizacja posiada skalowalną infrastrukturę IT wspierającą AI?",
+            "question_text": "Czy Twoja organizacja posiada skalowalną infrastrukturę IT wspierającą Al?",
             "answer_options": {
               "A": "Brak skalowalnej infrastruktury, brak uwzględnienia Al",
               "B": "Podstawowa infrastruktura, ale nie skalowalna",
@@ -1247,7 +1247,7 @@
               "D": "Skalowalna infrastruktura, ograniczona integracja Al",
               "E": "W pełni skalowalna infrastruktura zoptymalizowana pod Al"
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy technologia generatywnej Al jest zintegrowana z innymi systemami (np. ERP, CRM)?",
@@ -1258,7 +1258,7 @@
               "D": "Integracja z większością systemów, z pewnymi lukami",
               "E": "W pełni zintegrowana generatywna Al we wszystkich głównych systemach"
             },
-            "selected_answer": "B"
+            "selected_answer": "A"
           },
           {
             "question_text": "Na ile zautomatyzowane jest wdrażanie modeli generatywnej AI?",
@@ -1272,7 +1272,7 @@
             "selected_answer": "A"
           },
           {
-            "question_text": "Czy organizacja korzysta z chmury do przechowywania i przetwarzania danych AI?",
+            "question_text": "Czy organizacja korzysta z chmury do przechowywania i przetwarzania danych Al?",
             "answer_options": {
               "A": "Brak wykorzystania chmury dla Al, dane przechowywane lokalnie",
               "B": "Minimalne korzystanie z chmury do przechowywania danych",
@@ -1280,10 +1280,10 @@
               "D": "Większość danych Al przechowywana i przetwarzana w chmurze",
               "E": "Pełna adopcja chmury dla wszystkich działań związanych z Al"
             },
-            "selected_answer": "C"
+            "selected_answer": "A"
           },
           {
-            "question_text": "Czy organizacja korzysta z narzędzi do zarządzania cyklem życia modeli AI?",
+            "question_text": "Czy organizacja korzysta z narzędzi do zarządzania cyklem życia modeli Al?",
             "answer_options": {
               "A": "Brak narzędzi do zarządzania cyklem życia modeli Al",
               "B": "Podstawowe narzędzia, ale niedostatecznie wykorzystywane",
@@ -1291,10 +1291,10 @@
               "D": "Standaryzowane narzędzia dla większości procesów Al",
               "E": "W pełni wdrożone i zoptymalizowane narzędzia do zarządzania cyklem życia modeli Al"
             },
-            "selected_answer": "B"
+            "selected_answer": "A"
           },
           {
-            "question_text": "Czy infrastruktura organizacji jest przygotowana do obsługi dużych zbiorów danych dla AI?",
+            "question_text": "Czy infrastruktura organizacji jest przygotowana do obsługi dużych zbiorów danych dla Al?",
             "answer_options": {
               "A": "Nie jest w stanie obsłużyć dużych zbiorów danych",
               "B": "Podstawowa infrastruktura z ograniczoną pojemnością",
@@ -1302,10 +1302,10 @@
               "D": "Infrastruktura obsługuje większość dużych zbiorów danych",
               "E": "Zoptymalizowana infrastruktura do obsługi ogromnych zbiorów danych"
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
-            "question_text": "Czy organizacja jest zdolna do przetwarzania danych w czasie rzeczywistym dla AI?",
+            "question_text": "Czy organizacja jest zdolna do przetwarzania danych w czasie rzeczywistym dla Al?",
             "answer_options": {
               "A": "Brak przetwarzania danych w czasie rzeczywistym",
               "B": "Podstawowe przetwarzanie wsadowe",
@@ -1322,9 +1322,9 @@
               "B": "Podstawowa moc obliczeniowa, wystarczająca dla małych modeli",
               "C": "Umiarkowana moc obliczeniowa, wystarczająca dla niektórych modeli",
               "D": "Wysoka moc obliczeniowa, wystarczająca dla większości aplikacji Al",
-              "E": "Zaawansowana moc obliczeniowa zoptymalizowana pod potrzeby Al"
+              "E": "Zaawansowana moc obliczeniowa zoptymalizowana pod potrzeby AI"
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy w codziennej pracy wykorzystywane są wewnętrzne lub zewnętrzne narzędzia Al (np. ChatGPT, MS Copilot)?",
@@ -1346,7 +1346,7 @@
               "D": "Większość rozwiązań Al jest skalowalna",
               "E": "W pełni skalowalne rozwiązania Al wdrożone w całej organizacji"
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           }
         ]
       },
@@ -1363,7 +1363,7 @@
               "D": "Zbiory danych wysokiej jakości dla większości procesów",
               "E": "W pełni zoptymalizowane zbiory danych o najwyższej jakości"
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Na ile Twoja organizacja automatyzuje analizę i przetwarzanie danych?",
@@ -1374,7 +1374,7 @@
               "D": "Wysoka automatyzacja analiz i przetwarzania danych",
               "E": "W pełni zautomatyzowane procesy analizy i przetwarzania danych"
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy Twoja organizacja centralizuje zbiory danych (np. jeden słownik danych)?",
@@ -1385,7 +1385,7 @@
               "D": "Większość danych zcentralizowana, kilka wyjątków",
               "E": "Pełna centralizacja danych, jeden słownik danych w całej organizacji"
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy organizacja korzysta z zaawansowanych narzędzi do oceny jakości danych?",
@@ -1396,7 +1396,7 @@
               "D": "Narzędzia do oceny jakości danych wykorzystywane w większości przypadków",
               "E": "W pełni zoptymalizowane narzędzia do oceny jakości danych"
             },
-            "selected_answer": "C"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy Twoja organizacja ma strategię zarządzania danymi?",
@@ -1407,7 +1407,7 @@
               "D": "Strategia zarządzania danymi wdrożona w większości procesów",
               "E": "W pełni wdrożona i zoptymalizowana strategia zarządzania danymi"
             },
-            "selected_answer": "C"
+            "selected_answer": "A"
           },
           {
             "question_text": "Na ile Twoja organizacja automatyzuje proces zbierania i czyszczenia danych?",
@@ -1429,7 +1429,7 @@
               "D": "Większość danych zidentyfikowana i zintegrowana",
               "E": "W pełni zintegrowane dane z wewnętrznych i zewnętrznych źródeł"
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy organizacja posiada jeden standardowy model danych i zestaw metadanych?",
@@ -1440,7 +1440,7 @@
               "D": "Większość procesów oparta na jednym modelu danych",
               "E": "W pełni wdrożony jeden standardowy model danych i zbiór metadanych"
             },
-            "selected_answer": "B"
+            "selected_answer": "E"
           },
           {
             "question_text": "Czy Twoja organizacja korzysta z generatywnej Al do wspomagania wizualizacji danych?",
@@ -1451,7 +1451,7 @@
               "D": "generatywna Al wykorzystywana do większości wizualizacji danych",
               "E": "W pełni zintegrowane narzędzia Al do wspomagania wizualizacji danych"
             },
-            "selected_answer": "C"
+            "selected_answer": "A"
           }
         ]
       },
@@ -1460,7 +1460,7 @@
         "question_count": 6,
         "questions": [
           {
-            "question_text": "Czy Twoja organizacja rozwija świadomość i zrozumienie rozwiązań generatywnej AI?",
+            "question_text": "Czy Twoja organizacja rozwija świadomość i zrozumienie rozwiązań generatywnej Al?",
             "answer_options": {
               "A": "Brak świadomości rozwiązań generatywnej Al",
               "B": "Podstawowa świadomość wśród wybranych zespołów",
@@ -1468,7 +1468,7 @@
               "D": "Świadomość i zrozumienie w większości działów",
               "E": "Pełne zrozumienie i świadomość generatywnej Al w całej organizacji"
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy organizacja szkoli zespoły w zakresie programowania (także promptingu) i analizy danych?",
@@ -1490,7 +1490,7 @@
               "D": "Większość projektów posiada interdyscyplinarne zespoły",
               "E": "W pełni zintegrowane interdyscyplinarne zespoły ds. Al we wszystkich projektach"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy organizacja angażuje zewnętrznych konsultantów ds. generatywnej Al do zespołów?",
@@ -1501,10 +1501,10 @@
               "D": "Regularne angażowanie konsultantów do kluczowych inicjatyw",
               "E": "W pełni zintegrowane wsparcie konsultantów Al we wszystkich istotnych projektach"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           },
           {
-            "question_text": "Czy Twoja organizacja szkoli w zakresie zarządzania projektami opartymi o generatywną Al?",
+            "question_text": "Czy Twoja organizacja szkoli w zakresie zarządzania projektami opartymi o generatywną AI?",
             "answer_options": {
               "A": "Brak szkoleń z zarządzania projektami opartymi o generatywną Al",
               "B": "Podstawowe szkolenia dla wybranych osób",
@@ -1523,7 +1523,7 @@
               "D": "Scentralizowana platforma jest dostępna dla wszystkich pracowników, ale nie wszyscy z niej korzystają.",
               "E": "Scentralizowana platforma do gromadzenia wiedzy jest używana przez wszystkich pracowników i jest stale rozbudowywana."
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           }
         ]
       },
@@ -1543,7 +1543,7 @@
             "selected_answer": "A"
           },
           {
-            "question_text": "Na ile Twoja organizacja automatyzuje procesy rozwoju produktu z wykorzystaniem generatywnej AI?",
+            "question_text": "Na ile Twoja organizacja automatyzuje procesy rozwoju produktu z wykorzystaniem generatywnej Al?",
             "answer_options": {
               "A": "Brak automatyzacji procesów rozwoju produktu z Al",
               "B": "Podstawowa automatyzacja wybranych etapów rozwoju produktu",
@@ -1562,10 +1562,10 @@
               "D": "Al wspiera większość decyzji w kluczowych obszarach",
               "E": "Al zintegrowana we wszystkich procesach decyzyjnych organizacji"
             },
-            "selected_answer": "A"
+            "selected_answer": "C"
           },
           {
-            "question_text": "Czy organizacja wdraża narzędzia wspierające pracę zespołów AI?",
+            "question_text": "Czy organizacja wdraża narzędzia wspierające pracę zespołów Al?",
             "answer_options": {
               "A": "Brak narzędzi wspierających pracę zespołów Al",
               "B": "Podstawowe narzędzia, ale nie są powszechnie używane",
@@ -1587,7 +1587,7 @@
             "selected_answer": "B"
           },
           {
-            "question_text": "Czy organizacja zdefiniowała proces zarządzania cyklem życia dla oprogramowania AI?",
+            "question_text": "Czy organizacja zdefiniowała proces zarządzania cyklem życia dla oprogramowania Al?",
             "answer_options": {
               "A": "Brak zdefiniowanego procesu zarządzania cyklem życia oprogramowania",
               "B": "Proces częściowo zdefiniowany, ale niespójnie realizowany",
@@ -1595,7 +1595,7 @@
               "D": "Zdefiniowany proces zarządzania cyklem życia w większości projektów",
               "E": "Pełny proces zarządzania cyklem życia dla oprogramowania Al wdrożony we wszystkich projektach"
             },
-            "selected_answer": "B"
+            "selected_answer": "A"
           },
           {
             "question_text": "Czy organizacja posiada przewodnik po procesie rozwoju produktu opartym o generatywną AI?",
@@ -1623,7 +1623,7 @@
               "D": "Strategia długoterminowa jest wdrożona w większości obszarów",
               "E": "W pełni wdrożona, długoterminowa strategia inwestycji w generatywną Al"
             },
-            "selected_answer": "C"
+            "selected_answer": "A"
           },
           {
             "question_text": "Czy strategia Al jest wdrożona w rozwój produktów?",
@@ -1634,7 +1634,7 @@
               "D": "Strategia Al wdrożona w większości produktów",
               "E": "Pełne wdrożenie strategii Al we wszystkich produktach organizacji"
             },
-            "selected_answer": "B"
+            "selected_answer": "A"
           },
           {
             "question_text": "Czy Twoja organizacja określiła cele strategiczne dla generatywnej Al?",
@@ -1645,7 +1645,7 @@
               "D": "Cele strategiczne dla Al realizowane w większości obszarów",
               "E": "W pełni wdrożone i realizowane cele strategiczne dla generatywnej Al"
             },
-            "selected_answer": "B"
+            "selected_answer": "A"
           },
           {
             "question_text": "Czy organizacja ocenia wpływ biznesowy i wykonalność rozwiązań generatywnej Al z wyprzedzeniem?",
@@ -1656,7 +1656,7 @@
               "D": "Regularna ocena dla większości projektów",
               "E": "W pełni systematyczna ocena wpływu biznesowego i wykonalności dla wszystkich rozwiązań Al"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy Twoja organizacja opracowała system monitorowania wyników wdrożenia AI?",
@@ -1667,10 +1667,10 @@
               "D": "System monitorowania wyników wdrożenia Al działa w większości obszarów",
               "E": "W pełni wdrożony, zaawansowany system monitorowania wyników Al"
             },
-            "selected_answer": "B"
+            "selected_answer": "A"
           },
           {
-            "question_text": "Czy organizacja analizuje konkurencję pod względem ich zdolności do wdrożeń generatywnej AI?",
+            "question_text": "Czy organizacja analizuje konkurencję pod względem ich zdolności do wdrożeń generatywnej Al?",
             "answer_options": {
               "A": "Brak analiz konkurencji dotyczących Al",
               "B": "Sporadyczne analizy konkurencji dotyczące Al",
@@ -1678,7 +1678,7 @@
               "D": "Regularne analizy konkurencji pod kątem wdrożeń Al",
               "E": "W pełni zintegrowane analizy konkurencji dotyczące generatywnej Al we wszystkich strategicznych obszarach"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           }
         ]
       },
@@ -1698,7 +1698,7 @@
             "selected_answer": "B"
           },
           {
-            "question_text": "Czy Twoja organizacja przeznacza środki na rozwój kompetencji pracowników w zakresie generatywnej AI?",
+            "question_text": "Czy Twoja organizacja przeznacza środki na rozwój kompetencji pracowników w zakresie generatywnej Al?",
             "answer_options": {
               "A": "Brak środków na rozwój kompetencji pracowników w zakresie Al",
               "B": "Sporadyczne finansowanie szkoleń dla wybranych pracowników",
@@ -1706,7 +1706,7 @@
               "D": "Stałe finansowanie rozwoju kompetencji większości pracowników",
               "E": "Pełne finansowanie rozwoju kompetencji w zakresie Al dla wszystkich pracowników"
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy Twoja organizacja finansuje projekty pilotażowe i innowacyjne związane z generatywną AI?",
@@ -1717,10 +1717,10 @@
               "D": "Regularne finansowanie większości projektów pilotażowych",
               "E": "Pełne wsparcie finansowe dla wszystkich projektów pilotażowych i innowacyjnych związanych z Al"
             },
-            "selected_answer": "B"
+            "selected_answer": "C"
           },
           {
-            "question_text": "Czy organizacja alokuje środki na zewnętrzne konsultacje dotyczące generatywnej AI?",
+            "question_text": "Czy organizacja alokuje środki na zewnętrzne konsultacje dotyczące generatywnej Al?",
             "answer_options": {
               "A": "Brak alokacji środków na zewnętrzne konsultacje dotyczące Al",
               "B": "Sporadyczne alokowanie środków na konsultacje w wybranych projektach",
@@ -1728,10 +1728,10 @@
               "D": "Regularna alokacja środków na konsultacje w większości projektów",
               "E": "Pełna alokacja środków na zewnętrzne konsultacje we wszystkich strategicznych projektach"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           },
           {
-            "question_text": "Czy organizacja priorytetyzuje projekty generujące wysoką wartość dodaną dzięki generatywnej AI?",
+            "question_text": "Czy organizacja priorytetyzuje projekty generujące wysoką wartość dodaną dzięki generatywnej Al?",
             "answer_options": {
               "A": "Brak priorytetyzacji projektów związanych z Al",
               "B": "Priorytetyzacja jedynie wybranych projektów",
@@ -1739,7 +1739,7 @@
               "D": "Regularna priorytetyzacja większości projektów związanych z Al",
               "E": "Pełna priorytetyzacja projektów Al o najwyższej wartości dodanej"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           }
         ]
       },
@@ -1754,9 +1754,9 @@
               "B": "Minimalne wykorzystanie Al w wybranych procesach",
               "C": "Częściowe wykorzystanie Al do automatyzacji procesów",
               "D": "Al wspiera większość procesów projektowania i wytwarzania",
-              "E": "Pełne wykorzystanie Al w automatyzacji procesów"
+              "E": "Pełne wykorzystanie Al w automatyzacji procesów projektowania i wytwarzania produktów"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy Twoja organizacja korzysta z generatywnej Al do personalizacji produktów?",
@@ -1767,7 +1767,7 @@
               "D": "Personalizacja większości produktów z wykorzystaniem Al",
               "E": "Pełna personalizacja produktów przy wsparciu Al"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy organizacja korzysta z generatywnej Al do generowania pomysłów związanych z produktami (np. analiza sentymentu, analiza opinii)?",
@@ -1778,7 +1778,7 @@
               "D": "Generowanie pomysłów w większości procesów rozwoju produktów",
               "E": "Pełne wykorzystanie Al do generowania pomysłów i analiz opinii dla produktów"
             },
-            "selected_answer": "A"
+            "selected_answer": "C"
           },
           {
             "question_text": "Czy Twoja organizacja wykorzystuje generatywną Al do wspomagania redukcji informacji (np. streszczenia tekstów)?",
@@ -1789,10 +1789,10 @@
               "D": "Al stosowana regularnie do redukcji informacji w większości projektów",
               "E": "Pełne wykorzystanie Al do redukcji informacji we wszystkich obszarach"
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
-            "question_text": "Czy organizacja wspomaga ocenę koncepcji produktów przy użyciu generatywnej AI?",
+            "question_text": "Czy organizacja wspomaga ocenę koncepcji produktów przy użyciu generatywnej Al?",
             "answer_options": {
               "A": "Brak wspomagania oceny koncepcji przy użyciu Al",
               "B": "Sporadyczne wsparcie oceny koncepcji w wybranych projektach",
@@ -1800,7 +1800,7 @@
               "D": "Al wspiera ocenę koncepcji w większości projektów",
               "E": "Pełne wsparcie oceny koncepcji produktów z wykorzystaniem Al"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy Twoja organizacja wykorzystuje generatywną Al do skrócenia czasu testowania produktów?",
@@ -1811,7 +1811,7 @@
               "D": "Al stosowana regularnie do skracania czasu testowania produktów",
               "E": "Pełne wykorzystanie Al do maksymalnego skrócenia czasu testowania produktów"
             },
-            "selected_answer": "A"
+            "selected_answer": "B"
           },
           {
             "question_text": "Czy organizacja wspiera marketing produktowy z wykorzystaniem generatywnej Al (np. tworzenie reklam, słów kluczowych, filmów promocyjnych)?",
@@ -1822,7 +1822,7 @@
               "D": "Al wspiera marketing większości produktów",
               "E": "Pełne wykorzystanie Al do wspomagania marketingu produktowego (tworzenie reklam, kampanii, analiz)"
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy Twoja organizacja wykorzystuje generatywną Al do doskonalenia systemów rekomendacji produktów?",
@@ -1836,7 +1836,7 @@
             "selected_answer": "B"
           },
           {
-            "question_text": "Czy organizacja doskonali działanie baz danych produktów z wykorzystaniem generatywnej AI?",
+            "question_text": "Czy organizacja doskonali działanie baz danych produktów z wykorzystaniem generatywnej Al?",
             "answer_options": {
               "A": "Brak doskonalenia baz danych produktów przy użyciu Al",
               "B": "Podstawowe wykorzystanie Al w wybranych obszarach",
@@ -1858,7 +1858,7 @@
             "selected_answer": "A"
           },
           {
-            "question_text": "Czy organizacja poszukuje nowych przypadków użycia rozwiązań generatywnej AI?",
+            "question_text": "Czy organizacja poszukuje nowych przypadków użycia rozwiązań generatywnej Al?",
             "answer_options": {
               "A": "Brak poszukiwań nowych przypadków użycia Al",
               "B": "Sporadyczne poszukiwania nowych przypadków użycia",
@@ -1866,7 +1866,7 @@
               "D": "Regularne poszukiwanie nowych przypadków użycia Al",
               "E": "Pełne zaangażowanie w poszukiwanie nowych przypadków użycia generatywnej Al we wszystkich obszarach"
             },
-            "selected_answer": "B"
+            "selected_answer": "D"
           }
         ]
       },
@@ -1875,7 +1875,7 @@
         "question_count": 10,
         "questions": [
           {
-            "question_text": "Czy Twoja organizacja przestrzega zasad etyki w projektowaniu generatywnej AI?",
+            "question_text": "Czy Twoja organizacja przestrzega zasad etyki w projektowaniu generatywnej Al?",
             "answer_options": {
               "A": "Brak uwzględnienia zasad etyki w projektowaniu Al",
               "B": "Sporadyczne uwzględnienie etyki w wybranych projektach",
@@ -1883,7 +1883,7 @@
               "D": "Większość projektów uwzględnia zasady etyki",
               "E": "W pełni uwzględnione zasady etyki we wszystkich projektach Al"
             },
-            "selected_answer": "D"
+            "selected_answer": "A"
           },
           {
             "question_text": "Czy Twoja organizacja zapewnia bezpieczeństwo i prywatność danych związanych z rozwojem produktów?",
@@ -1905,7 +1905,7 @@
               "D": "Większość danych posiada mechanizmy możliwości wyjaśnienia",
               "E": "Pełne zaufanie do danych i mechanizmy możliwości wyjaśnienia wdrożone we wszystkich procesach"
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy organizacja wdraża standardy ochrony i mechanizmy dotyczące kopii zapasowych danych?",
@@ -1916,7 +1916,7 @@
               "D": "Większość obszarów objęta standardami ochrony i kopiami zapasowymi danych",
               "E": "W pełni wdrożone standardy ochrony i mechanizmy kopii zapasowych we wszystkich obszarach"
             },
-            "selected_answer": "D"
+            "selected_answer": "E"
           },
           {
             "question_text": "Czy Twoja organizacja przeciwdziała uprzedzeniom i niesprawiedliwości w algorytmach generatywnej Al?",
@@ -1927,7 +1927,7 @@
               "D": "Większość algorytmów jest weryfikowana pod kątem uprzedzeń",
               "E": "Pełna eliminacja uprzedzeń i niesprawiedliwości w algorytmach Al"
             },
-            "selected_answer": "B"
+            "selected_answer": "A"
           },
           {
             "question_text": "Czy organizacja regularnie ocenia zgodność algorytmów generatywnej Al z regulacjami prawnymi?",
@@ -1938,10 +1938,10 @@
               "D": "Większość algorytmów jest regularnie weryfikowana pod kątem zgodności z regulacjami",
               "E": "W pełni wdrożone procedury regularnej oceny zgodności algorytmów Al z przepisami"
             },
-            "selected_answer": "B"
+            "selected_answer": "A"
           },
           {
-            "question_text": "Czy Twoja organizacja tworzy systemy audytu decyzji podejmowanych przez generatywną AI?",
+            "question_text": "Czy Twoja organizacja tworzy systemy audytu decyzji podejmowanych przez generatywną Al?",
             "answer_options": {
               "A": "Brak systemów audytu decyzji podejmowanych przez Al",
               "B": "Podstawowe systemy audytu wprowadzane w wybranych projektach",
@@ -1949,7 +1949,7 @@
               "D": "Systemy audytu funkcjonują dla większości decyzji Al",
               "E": "W pełni wdrożone systemy audytu i odpowiedzialności za decyzje podejmowane przez Al"
             },
-            "selected_answer": "B"
+            "selected_answer": "A"
           },
           {
             "question_text": "Czy Twoja organizacja poszerza świadomość dotyczącą ochrony danych wśród pracowników?",
@@ -1960,7 +1960,7 @@
               "D": "Regularne szkolenia w zakresie ochrony danych w większości zespołów",
               "E": "Pełne programy edukacyjne dotyczące ochrony danych dla wszystkich pracowników"
             },
-            "selected_answer": "C"
+            "selected_answer": "D"
           },
           {
             "question_text": "Czy organizacja wykorzystuje technologie dotyczące cyberbezpieczeństwa?",

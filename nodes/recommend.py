@@ -8,6 +8,7 @@ from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage
 from state import DocumentState
+from utils import extract_organization_letter, get_reports_filename
 
 # Load environment variables
 load_dotenv()
@@ -116,15 +117,17 @@ def recommend(state: DocumentState) -> DocumentState:
             return state
         
         # Load supplementary questionnaire answers for context
+        org_letter = extract_organization_letter()
         supplementary_answers = None
+        supplementary_file = f"./data/process/{org_letter}_1.json"
         try:
-            with open("./data/process/A_1.json", "r", encoding="utf-8") as f:
+            with open(supplementary_file, "r", encoding="utf-8") as f:
                 supplementary_answers = json.load(f)
-            print("Loaded supplementary questionnaire data (A_1.json) for context")
+            print(f"Loaded supplementary questionnaire data ({org_letter}_1.json) for context")
         except FileNotFoundError:
-            print("A_1.json not found - proceeding without supplementary context")
+            print(f"{org_letter}_1.json not found - proceeding without supplementary context")
         except Exception as e:
-            print(f"Error loading A_1.json: {e} - proceeding without supplementary context")
+            print(f"Error loading {org_letter}_1.json: {e} - proceeding without supplementary context")
         
         # Format gaps data and supplementary context as JSON strings for the prompt
         gaps_json = json.dumps(state["gaps"], ensure_ascii=False, indent=2)
@@ -174,9 +177,7 @@ def recommend(state: DocumentState) -> DocumentState:
             state["recommendation_approved"] = False
         
         # Determine output filename based on main file
-        output_filename = "A_recommendations.md"  # Default
-        if os.path.exists("./data/process/A.json"):
-            output_filename = "A_recommendations.md"
+        output_filename = get_reports_filename("recommendations.md", org_letter)
         
         # Ensure reports directory exists
         reports_dir = "./data/reports"

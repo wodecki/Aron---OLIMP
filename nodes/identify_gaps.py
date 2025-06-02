@@ -3,6 +3,7 @@ import os
 import tomllib
 from state import DocumentState
 from typing import Dict, List, Any
+from utils import extract_organization_letter, get_process_filename
 
 
 def identify_gaps(state: DocumentState) -> DocumentState:
@@ -98,17 +99,9 @@ def identify_gaps(state: DocumentState) -> DocumentState:
     print(f"Gaps analysis completed: {total_questions} questions across {len(gaps)} sections")
     
     # Save gaps to JSON file
-    # Determine the output filename based on integrated file name
-    output_filename = None
-    if "answers" in state and isinstance(state["answers"], dict):
-        # Try to find an integrated file pattern (like A.json)
-        if os.path.exists("./data/process/A.json"):
-            output_filename = "A_gaps.json"
-        else:
-            # Fallback to generic name
-            output_filename = "gaps.json"
-    else:
-        output_filename = "gaps.json"
+    # Determine the output filename based on organization letter
+    org_letter = extract_organization_letter()
+    output_filename = get_process_filename("gaps.json", org_letter)
     
     output_path = f"./data/process/{output_filename}"
     
